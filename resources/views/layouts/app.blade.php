@@ -53,25 +53,25 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarmain">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/about-us') }}">About</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Services
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="service-detail.html">Web Design</a></li>
-                                <li><a class="dropdown-item" href="service-detail.html">Logo Design</a></li>
-                                <li><a class="dropdown-item" href="service-detail.html">T-shirt Design</a></li>
-                                <li><a class="dropdown-item" href="service-detail.html">Book Cover Design</a></li>
-                                <li><a class="dropdown-item" href="services.html">View All</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services-detail') }}">Web Design</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services-detail') }}">Logo Design</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services-detail') }}">T-shirt Design</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services-detail') }}">Book Cover Design</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services-detail') }}">View All</a></li>
                             </ul>
                             </li>                        
-                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/faq') }}">FAQ</a></li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="blog.html">Blog</a>                            
+                            <a class="nav-link " href="{{ url('/blog') }}">Blog</a>                            
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/contact') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>
