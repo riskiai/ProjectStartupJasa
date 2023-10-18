@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/admin/login', [AdminLoginController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
+
+
+// Milddleware Khsusus AdminPages
+Route::group(['prefix' => 'admin'], function(){
+    
+    Route::group(['middleware' => 'admin.guest'], function(){
+        // here we will define guest route
+    
+        Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login');
+        Route::post('/login', [AdminLoginController::class, 'authenticate'])->name('admin.auth');
+    });
+
+    Route::group(['middleware' => 'admin.auth'], function(){
+        // here we will define password protected routes
+
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard'); 
+        
+        Route::get('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');   
+    });
+    
+
+});
