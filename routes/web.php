@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\ServiceController;
+use App\Http\Controllers\admin\TempImageController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
@@ -46,8 +48,10 @@ Route::group(['prefix' => 'admin'], function(){
         // here we will define password protected routes
 
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard'); 
-        
         Route::get('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');   
+
+        Route::get('/services/create', [ServiceController::class, 'create']);
+        Route::post('/temp/upload', [TempImageController::class, 'upload'])->name('tempUpload');
     });
     
 });
