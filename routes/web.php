@@ -51,7 +51,11 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');   
 
         Route::get('/services/create', [ServiceController::class, 'create']);
+        Route::post('/services/create', [ServiceController::class, 'save'])->name('service.create');
+        
         Route::post('/temp/upload', [TempImageController::class, 'upload'])->name('tempUpload');
+
+        Route::get('/services', [ServiceController::class, 'index'])->name('serviceList');
     });
     
 });

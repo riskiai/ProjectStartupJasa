@@ -127,6 +127,13 @@
                     height: 300
                 });
             });
+
+
+            $.ajaxSetup({
+                headers:  {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
         </script>
 
         @yield('extraJs')

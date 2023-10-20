@@ -3,13 +3,33 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\TempFile;
 use Illuminate\Http\Request;
 
 class TempImageController extends Controller
 {
-    public function upload() {
+    public function upload(Request $request) {
 
-        echo "Hello";
+        $temp = new TempFile;
+        $temp->name = 'TEMP VALUE';
+        $temp->save(); // This will create a blank entry in DB
+
+        $image = $request->file('file');
+
+        $destinationPath = './uploads/temp/';
+
+        $extenstion = $image->getClientOriginalExtension();
+        $newFileName = $temp->id.'.'.$extenstion;
+        $image->move($destinationPath, $newFileName);
+
+        $temp->name = $newFileName;
+        $temp->save();
+
+        return response()->json([
+            'status' => 200,
+            'id' => $temp->id,
+            'name' => $newFileName
+        ]);
 
     }
 }
