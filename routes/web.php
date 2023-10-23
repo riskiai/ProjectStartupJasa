@@ -50,12 +50,18 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard'); 
         Route::get('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');   
 
-        Route::get('/services/create', [ServiceController::class, 'create']);
+        Route::get('/services/create', [ServiceController::class, 'create'])->name('service.create.form');
         Route::post('/services/create', [ServiceController::class, 'save'])->name('service.create');
         
         Route::post('/temp/upload', [TempImageController::class, 'upload'])->name('tempUpload');
 
         Route::get('/services', [ServiceController::class, 'index'])->name('serviceList');
+
+        Route::get('/services/edit/{id}', [ServiceController::class, 'edit'])->name('service.edit');
+
+        Route::post('/services/edit/{id}', [ServiceController::class, 'update'])->name('service.edit.update');
+
+        Route::post('/services/delete/{id}', [ServiceController::class, 'delete'])->name('service.delete');
     });
     
 });

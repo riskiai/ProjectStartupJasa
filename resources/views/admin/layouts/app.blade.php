@@ -43,38 +43,38 @@
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('admin.dashboard') }}" class="nav-link">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>Dashboard</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                <a href="{{ route('serviceList') }}" class="nav-link">
+                                    <i class="fas fa-cogs nav-icon"></i>
                                     <p>Manage Services</p>
                                 </a>
                             </li>
 							<li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fas fa-newspaper nav-icon"></i>
                                     <p>Manage Blogs</p>
                                 </a>
                             </li>
 							<li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="far fa-question-circle nav-icon"></i>
                                     <p>Manage Faq</p>
                                 </a>
                             </li>
 							<li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="far fa-file nav-icon"></i>
                                     <p>Manage Pages</p>
                                 </a>
                             </li>
 							<li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fas fa-wrench nav-icon"></i>
                                     <p>Settings</p>
                                 </a>
                             </li>  
@@ -100,7 +100,7 @@
 
 
             <footer class="main-footer">
-                <strong>Copyright &copy; 2022 </strong>All rights reserved.
+                <strong>Copyright &copy; 2023 </strong>All rights reserved.
             </footer>
             <!-- Control Sidebar -->
             <aside class="control-sidebar control-sidebar-dark">

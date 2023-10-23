@@ -8,12 +8,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Services / Create</h1>
+                    <h1 class="m-0">Services / Edit</h1>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
                     </ol>
                 </div>
                 <!-- /.col -->
@@ -29,7 +29,7 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-md-12">	
-                    <form action="" method="post" name="createServiceForm" id="createServiceForm">					
+                    <form action="" method="post" name="editServiceForm" id="editServiceForm">					
                         <div class="card">
                             <div class="card-header">
                                 <a href="{{ route('serviceList') }}" class="btn btn-primary">Back</a>
@@ -38,13 +38,13 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" name="name" id="name" class="form-control">
+                                    <input type="text" value="{{ $service->name }}" name="name" id="name" class="form-control">
                                     <p class="error name-error"></p>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">Description</label>
-                                    <textarea name="description" id="description" class="summernote"></textarea>
+                                    <textarea name="description" id="description" class="summernote"> {{ $service->description }}</textarea>
                                 </div>
 
                                 <div class="row">    
@@ -56,10 +56,16 @@
                                                 <br>Drop files here or click to upload.<br><br>                                            
                                             </div>
                                         </div>
+
+                                        @if(!empty($service->image))
+                                        <img class="img-thumbnail my-4" src="{{ asset('uploads/services/thumb/small/' . $service->image) }}" width="300">
+                                       
+                                        @endif
+
                                     </div>
                                     <div class="col-md-6">
                                         <label for="">Short Description</label>
-                                        <textarea name="short_description" id="short_description" cols="30" rows="7" class="form-control"></textarea>
+                                        <textarea name="short_description" id="short_description" cols="30" rows="7" class="form-control">{{ $service->short_desc }}</textarea>
                                     </div>  
                                 </div>
 
@@ -68,8 +74,8 @@
                                         Status
                                     </label>
                                     <select name="status" id="status" class="form-control">
-                                        <option value="1">Active</option>
-                                        <option value="0">Block</option>
+                                        <option value="1" {{ ($service->status == 1) ? 'selected' : '' }}>Active</option>
+                                        <option value="0" {{ ($service->status == 0) ? 'selected' : '' }}>Block</option>
                                     </select>
                                 </div>
 
@@ -115,17 +121,16 @@
         });
 
 
-        $("#createServiceForm").submit(function(){
+        $("#editServiceForm").submit(function(){
             event.preventDefault();
             $("button[type='submit']").prop('disbaled', true);
             $.ajax({
-                url: '{{ route("service.create") }}',
+                url: '{{ route("service.edit.update",$service->id) }}',
                 type: 'POST',
                 dataType: 'json',
-                data: $("#createServiceForm").serializeArray(),
+                data: $("#editServiceForm").serializeArray(),
                 success: function(response){
                     $("button[type='submit']").prop('disbaled', false);
-
                     if (response.status == 200) {
                         // no erro
                         window.location.href = '{{ route("serviceList") }}';
