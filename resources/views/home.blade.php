@@ -105,17 +105,29 @@
         <h2 class="title-color mb-4 h1">Services</h2>
         <div class="cards">
             <div class="services-slider">
+                
+                @if(!empty($services))
+                @foreach ($services as $service)
                 <div class="card border-0 ">
-                    <img src="{{ asset('assets/images/logo-design.jpg') }}" class="card-img-top" alt="">
+
+                    @if(!empty($service->image))
+                        <img src="{{ asset('uploads/services/thumb/small/'.$service->image) }}" class="card-img-top" alt="">
+                       @else
+                       <img src="{{ asset('uploads/placeholder.png') }}" class="card-img-top" alt="">
+                       @endif
+
                     <div class="card-body p-3">
-                        <h1 class="card-title mt-2"><a href="#">Logo Design</a></h1>
+                        <h1 class="card-title mt-2"><a href="{{ url('/services/detail/'.$service->id) }}">{{ $service->name }}</a></h1>
                         <div class="content pt-2">
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
+                            <p class="card-text">{{ $service->short_desc }}</p>
                         </div>
-                        <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
+                        <a href="{{ url('/services/detail/'.$service->id) }}" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
                     </div>
-                </div>   
-                <div class="card border-0">
+                </div>
+                @endforeach
+                @endif
+                
+               {{--  <div class="card border-0">
                     <img src="{{ asset('assets/images/digital-marketing.jpg') }}" class="card-img-top" alt="">
                     <div class="card-body p-3">
                         <h1 class="card-title mt-2"><a href="#">Digital Marketing</a></h1>
@@ -145,7 +157,8 @@
                         </div>                                
                         <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
                     </div>
-                </div> 
+                </div>  --}}
+                
             </div>
         </div>                
     </div>

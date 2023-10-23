@@ -60,11 +60,11 @@
                                 Services
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ url('/services-detail') }}">Web Design</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/services-detail') }}">Logo Design</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/services-detail') }}">T-shirt Design</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/services-detail') }}">Book Cover Design</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/services-detail') }}">View All</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services') }}">Web Design</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services') }}">Logo Design</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services') }}">T-shirt Design</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services') }}">Book Cover Design</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services') }}">View All</a></li>
                             </ul>
                             </li>                        
                         <li class="nav-item"><a class="nav-link" href="{{ url('/faq') }}">FAQ</a></li>

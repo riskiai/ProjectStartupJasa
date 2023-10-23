@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\TempImageController;
+use App\Http\Controllers\admin\BlogController as AdminBlogController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
@@ -26,6 +27,8 @@ use Illuminate\Support\Facades\Route;
 /* Bagian Halaman Landing Page */
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [HomeController::class, 'about']);
+Route::get('/services', [ServicesController::class, 'index']);
+Route::get('/services/detail/{id}', [ServicesController::class, 'detail']);
 Route::get('/services', [ServicesController::class, 'index']);
 Route::get('/services-detail', [ServicesController::class, 'servicesdetail']);
 Route::get('/faq', [FaqController::class, 'index']);
@@ -62,6 +65,17 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/services/edit/{id}', [ServiceController::class, 'update'])->name('service.edit.update');
 
         Route::post('/services/delete/{id}', [ServiceController::class, 'delete'])->name('service.delete');
+
+        // Blog admin Routes
+        Route::get('/blog/create', [AdminBlogController::class, 'create'])->name('blog.create.form');
+        Route::post('/blog/create', [AdminBlogController::class, 'save'])->name('blog.save');
+
+        Route::get('/blog', [AdminBlogController::class, 'index'])->name('blogList');
+
+        Route::get('/blog/edit/{id}', [AdminBlogController::class, 'edit'])->name('blog.edit');
+        Route::post('/blog/edit/{id}', [AdminBlogController::class, 'update'])->name('blog.update');
+
+        Route::post('/blog/delete/{id}', [AdminBlogController::class, 'delete'])->name('blog.delete');
     });
     
 });
