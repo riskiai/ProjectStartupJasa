@@ -30,10 +30,8 @@
             <div class="row">
                 <div class="col-md-12 welcome-panel text-center">								
                     <div>
-                        <h1>Welcome To Admin Panel</h1>
-                        <p class="card-text">
-                            Choose options from left panel.
-                        </p>                                  
+                        <h1 class="welcome-dashboard">Welcome To Admin Panel</h1>
+                        <button class="button-keren">Hi Guys</button>                                  
                     </div> 
                 </div>                            
             </div>

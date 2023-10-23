@@ -22,3 +22,29 @@ html,body{
 .error{
     color: rgb(207, 22, 22);
 }
+
+.button-keren {
+    color: white; 
+    background-color: rgb(209, 82, 3); 
+    border-color: white; 
+    width: 100px; 
+    font-size: 20px;
+}
+
+.button-keren:hover{
+    color: rgb(209, 82, 3); 
+    background-color: white; 
+    border-color: rgb(209, 82, 3); 
+    width: 100px; 
+    font-size: 20px;
+}
+
+.welcome-dashboard {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: monospace;
+    font-size: 50px;
+    font-weight: 400;
+    color: rgb(209, 82, 3);
+}
+
