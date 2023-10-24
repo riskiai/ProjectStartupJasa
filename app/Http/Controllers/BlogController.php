@@ -57,7 +57,7 @@ class BlogController extends Controller
                 'status' => 1,
                 'name' => $comment->name,
                 'comment' => $comment->comment,
-                'created_at' => $comment->created_at->setTimezone('Asia/Jakarta')->format('H:i'),
+                'created_at' => $comment->created_at->setTimezone('Asia/Jakarta')->format('d/m/Y H:i'),
             ]);
             
             

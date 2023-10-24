@@ -14,9 +14,9 @@
         <div class="login-box">
            
             {{-- Image/Gambar --}}
-            {{--  <div class="login-logo mb-4">
-                <a href="#"><img src="../images/logo.png"></a>
-            </div> --}}
+             <div class="login-logo mb-4">
+                <a href="#"><img src="{{ asset('assets/images/logo.png') }}"></a>
+            </div>
 
             @if(Session::has('error'))
                 <div class="alert alert-danger">
