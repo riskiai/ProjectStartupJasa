@@ -32,7 +32,9 @@ Route::get('/services/detail/{id}', [ServicesController::class, 'detail']);
 Route::get('/services', [ServicesController::class, 'index']);
 Route::get('/services-detail', [ServicesController::class, 'servicesdetail']);
 Route::get('/faq', [FaqController::class, 'index']);
-Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.front');
+Route::get('/blog/{id}', [BlogController::class, 'detail'])->name('blog-detail');   
+Route::post('/save-comment', [BlogController::class, 'saveComment'])->name('save.blog'); 
 Route::get('/contact', [ContactController::class, 'index']);
 
 

@@ -27,82 +27,30 @@
     <div class="container">
         <div class="cards">
            <div class="row">                       
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/logo-design.jpg') }}" class="card-img-top" alt="">
-                        <div class="card-body p-3">
-                            <h1 class="card-title mt-2"><a href="#">Lorem ipsum dolor </a></h1>
-                            <div class="content pt-2">
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-                            </div>
-                            <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
-                        </div>
-                    </div> 
-                </div> 
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/digital-marketing.jpg') }}" class="card-img-top" alt="">
-                        <div class="card-body p-3">
-                            <h1 class="card-title mt-2"><a href="#">Lorem ipsum dolor </a></h1>
-                            <div class="content pt-2">
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-                            </div>                                
-                            <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/t-shirt-design.jpg') }}" class="card-img-top" alt="">
-                        <div class="card-body p-3">
-                            <h1 class="card-title mt-2"><a href="#">Lorem ipsum dolor </a></h1>
-                            <div class="content pt-2">
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-                            </div>                                
-                            <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
-                        </div>
-                    </div>  
-                </div>  
-
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/book-cover-design.jpg') }}" class="card-img-top" alt="">
-                        <div class="card-body p-3">
-                            <h1 class="card-title mt-2"><a href="#">Lorem ipsum dolor </a></h1>
-                            <div class="content pt-2">
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-                            </div>                                
-                            <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
-                        </div>
-                    </div> 
-                </div>  
-
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0">
-                        <img src="{{ asset('assets/images/book-cover-design.jpg') }}" class="card-img-top" alt="">
-                        <div class="card-body p-3">
-                            <h1 class="card-title mt-2"><a href="#">Lorem ipsum dolor </a></h1>
-                            <div class="content pt-2">
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-                            </div>                                
-                            <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
-                        </div>
-                    </div> 
-                </div> 
                 
+                @if(!empty($blogs))
+                @foreach ($blogs as $blog)
+                    
                 <div class="col-md-4 mb-4">
                     <div class="card border-0">
-                        <img src="{{ asset('assets/images/book-cover-design.jpg') }}" class="card-img-top" alt="">
+                        
+                        @if(!empty($blog->image))
+                        <img src="{{ asset('uploads/blogs/thumb/small/'.$blog->image) }}" class="card-img-top" alt="">
+                        @else
+
+                        @endif
+                        
                         <div class="card-body p-3">
-                            <h1 class="card-title mt-2"><a href="#">Lorem ipsum dolor </a></h1>
+                            <h1 class="card-title mt-2"><a href="{{ route('blog-detail', $blog->id) }}">{{ $blog->name }} </a></h1>
                             <div class="content pt-2">
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-                            </div>                                
-                            <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
+                                <p class="card-text">{{ $blog->short_desc }}</p>
+                            </div>
+                            <a href="{{ route('blog-detail', $blog->id) }}" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
                         </div>
                     </div> 
                 </div> 
+                @endforeach
+                @endif
 
            </div>
         </div>                

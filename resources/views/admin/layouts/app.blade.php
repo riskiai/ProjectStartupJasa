@@ -49,7 +49,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('serviceList') }}" class="nav-link">
+                                <a href="{{ route('serviceList') }}" class="nav-link"> 
                                     <i class="fas fa-cogs nav-icon"></i>
                                     <p>Manage Services</p>
                                 </a>
