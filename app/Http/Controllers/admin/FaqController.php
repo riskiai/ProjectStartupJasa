@@ -92,4 +92,18 @@ class FaqController extends Controller
             ]);
         }
     }
+
+    public function delete($id, Request $request) {
+
+        Faq::where('id', $id)->delete();
+        
+        $request->session()->flash('success', 'Faq deleted successfully');
+
+        return response()->json([
+            'status' => 200,
+        ]);
+
+
+
+    }
 }

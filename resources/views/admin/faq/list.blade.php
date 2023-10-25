@@ -97,7 +97,7 @@
 
                                                 </a>
                                                 &nbsp;
-                                                <a href="javascript:void(0);" class="" onclick="deleteBlog({{ $faqRow->id }});">
+                                                <a href="javascript:void(0);" class="" onclick="deleteFaq({{ $faqRow->id }});">
 
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#dc3545" class="bi bi-trash" viewBox="0 0 16 16">
                                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
@@ -142,13 +142,13 @@
 
 @section('extraJs')
 <script type="text/javascript">
-
-    function deleteBlog(id){
+    /* Untuk Hapus Data Faq */
+    function deleteFaq(id){
         if (confirm("Are you sure you want to delete?")) {
 
             //services.delete
             $.ajax({
-                url: '{{ url("/admin/blog/delete") }}/'+id,
+                url: '{{ url("/admin/faq/delete") }}/'+id,
                 type: 'POST',
                 dataType: 'json',
                 data: {},

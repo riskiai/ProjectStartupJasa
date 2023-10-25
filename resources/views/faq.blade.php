@@ -28,17 +28,27 @@
         <div class="row">
             <div class="col-md-12 py-4">
                 <div class="accordion" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                What does LOREM mean?
-                            </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum vitae, doloremque quaerat atque libero possimus veniam labore nam sint, expedita autem eius in? Perferendis, commodi reprehenderit eaque porro magnam similique! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias in quisquam dignissimos omnis a perferendis, animi, eligendi quo labore rem quas. Accusamus quidem rem consequatur vero culpa nostrum, assumenda exercitationem. </div>
+                    
+                    @if (!empty($faq))
+                    @foreach ($faq as $key => $faqRow)
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-{{ $key }}" aria-expanded="false" aria-controls="flush-{{ $key }}">
+                                    {{ $faqRow->question }}
+                                </button>
+                            </h2>
+                            <div id="flush-{{ $key }}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    {!! $faqRow->answer !!}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
+                        
+                    @endforeach
+                    @endif
+                    
+                
+                   {{--  <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                                 Where can I subscribe to your newsletter?
@@ -77,7 +87,9 @@
                         <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum vitae, doloremque quaerat atque libero possimus veniam labore nam sint, expedita autem eius in? Perferendis, commodi reprehenderit eaque porro magnam similique!</div>
                         </div>
-                    </div>
+                    </div> --}}
+
+
                 </div>
             </div>                
         </div>
@@ -101,16 +113,37 @@
         <h2 class="title-color mb-4 h1">Blog & News</h2>
         <div class="cards">
             <div class="services-slider">
-                <div class="card border-0 ">
-                    <img src="{{ asset('assets/images/logo-design.jpg') }}" class="card-img-top" alt="">
-                    <div class="card-body p-3">
-                        <h1 class="card-title mt-2"><a href="#">Logo Design</a></h1>
-                        <div class="content pt-2">
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
+               
+                @if(!empty($blogs))
+                @foreach ($blogs as $blog)
+                    
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0">
+                        
+                        @if(!empty($blog->image))
+                        <img src="{{ asset('uploads/blogs/thumb/small/'.$blog->image) }}" class="card-img-top" alt="">
+                        @else
+
+                        @endif
+                        
+                        <div class="card-body p-3">
+                            <h1 class="card-title mt-2"><a href="{{ route('blog-detail', $blog->id) }}">{{ $blog->name }} </a></h1>
+                            <div class="content pt-2">
+                                <p class="card-text">{{ $blog->short_desc }}</p>
+                            </div>
+                            <a href="{{ route('blog-detail', $blog->id) }}" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
                         </div>
-                        <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-                </div>   
+                    </div> 
+                </div> 
+                @endforeach
+                @endif
+
+            </div>
+        </div>                
+    </div>
+</section>
+
+{{-- 
                 <div class="card border-0">
                     <img src="{{ asset('assets/images/digital-marketing.jpg') }}" class="card-img-top" alt="">
                     <div class="card-body p-3">
@@ -141,10 +174,9 @@
                         </div>                                
                         <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
                     </div>
-                </div> 
-            </div>
-        </div>                
-    </div>
-</section>
+                </div>  --}}
+
+                
+        
 
 @endsection

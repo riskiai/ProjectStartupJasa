@@ -32,6 +32,7 @@ Route::get('/services', [ServicesController::class, 'index']);
 Route::get('/services/detail/{id}', [ServicesController::class, 'detail']);
 Route::get('/services', [ServicesController::class, 'index']);
 Route::get('/services-detail', [ServicesController::class, 'servicesdetail']);
+
 Route::get('/faq', [FaqController::class, 'index']);
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.front');
 Route::get('/blog/{id}', [BlogController::class, 'detail'])->name('blog-detail');   
@@ -90,6 +91,8 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/faq/edit/{id}', [AdminFaqController::class, 'edit'])->name('faq.edit');
 
         Route::post('/faq/edit/{id}', [AdminFaqController::class, 'update'])->name('faq.update');
+
+        Route::post('/faq/delete/{id}', [AdminFaqController::class, 'delete'])->name('faq.delete');
         
     });
     

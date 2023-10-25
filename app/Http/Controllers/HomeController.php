@@ -20,6 +20,10 @@ class HomeController extends Controller
     }
 
     public function about() {
-        return view('about');
+
+        $blogs = Blog::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
+        $data1['blogs'] = $blogs;
+
+        return view('about' ,$data1);
     }
 }

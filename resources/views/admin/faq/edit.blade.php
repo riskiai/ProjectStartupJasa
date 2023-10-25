@@ -53,7 +53,7 @@
                                     </label>
                                     <select name="status" id="status" class="form-control">
                                         <option value="1" {{ ($faq->status == 1) ? 'selected' : '' }}>Active</option>
-                                        <option value="0" {{ ($faq->status == 0) ? 'selected' : '' }}>>Block</option>
+                                        <option value="0" {{ ($faq->status == 0) ? 'selected' : '' }}>Block</option>
                                     </select>
                                 </div>
 
