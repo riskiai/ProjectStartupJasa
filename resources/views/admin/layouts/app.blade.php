@@ -50,7 +50,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('serviceList') }}" class="nav-link"> 
-                                    <i class="fas fa-cogs nav-icon"></i>
+                                    <i class="fas fa-rocket nav-icon"></i>
                                     <p>Manage Services</p>
                                 </a>
                             </li>
@@ -61,7 +61,7 @@
                                 </a>
                             </li>
 							<li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('faqList') }}" class="nav-link">
                                     <i class="far fa-question-circle nav-icon"></i>
                                     <p>Manage Faq</p>
                                 </a>

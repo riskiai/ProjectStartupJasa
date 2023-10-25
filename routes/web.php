@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\TempImageController;
 use App\Http\Controllers\admin\BlogController as AdminBlogController;
+use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
@@ -78,6 +79,18 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/blog/edit/{id}', [AdminBlogController::class, 'update'])->name('blog.update');
 
         Route::post('/blog/delete/{id}', [AdminBlogController::class, 'delete'])->name('blog.delete');
+
+        // Faq Routes
+        Route::get('/faq', [AdminFaqController::class, 'index'])->name('faqList');
+        
+        Route::get('/faq/create', [AdminFaqController::class, 'create'])->name('faq.create.form');
+
+        Route::post('/faq/save', [AdminFaqController::class, 'save'])->name('faq.save');
+
+        Route::get('/faq/edit/{id}', [AdminFaqController::class, 'edit'])->name('faq.edit');
+
+        Route::post('/faq/edit/{id}', [AdminFaqController::class, 'update'])->name('faq.update');
+        
     });
     
 });
