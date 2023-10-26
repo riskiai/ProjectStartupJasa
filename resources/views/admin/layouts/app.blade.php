@@ -67,7 +67,7 @@
                                 </a>
                             </li>
 							<li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('pageList') }}" class="nav-link">
                                     <i class="far fa-file nav-icon"></i>
                                     <p>Manage Pages</p>
                                 </a>

@@ -115,10 +115,10 @@
                         <div class="divider mb-4"></div>
     
                         <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="#!">Terms &amp; Conditions</a></li>
-                            <li><a href="#!">Privacy Policy</a></li>
-                            <li><a href="#!">About Us</a></li>                            
-                            <li><a href="#!">Blog</a></li>                            
+                            <li><a href="{{ route('terms') }}">Terms &amp; Conditions</a></li>
+                            <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
+                            <li><a href="{{ route('about') }}">About Us</a></li>                            
+                            <li><a href="{{ route('blog.front') }}">Blog</a></li>                            
                         </ul>
                     </div>
                 </div>

@@ -13,6 +13,8 @@ class BlogController extends Controller
     public function index(){
         $blogs = Blog::where('status', 1)->orderBy('created_at','DESC')->get();
         
+        
+        
         $data['blogs'] = $blogs;
 
 
@@ -22,6 +24,7 @@ class BlogController extends Controller
     public function detail($id){
         
         $blog = Blog::where('id', $id)->first();
+        
 
         if ($blog == null) {
             return redirect()->route('blog.front');
