@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use App\Models\Setting;
+use App\Models\FeaturedService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -14,7 +15,11 @@ class SettingsController extends Controller
         $settings = Setting::find(1);
 
         $services = Service::orderBy('name', 'asc')->get();
-        return view('admin.settings', ['settings'=>$settings, 'services' => $services]);
+        $featuredServices = FeaturedService::select('services.name', 'featured_services.*')
+                           ->leftJoin('services', 'services.id', 'featured_services.service_id')
+                           ->orderBy('sort_order', 'ASC')->get();
+
+        return view('admin.settings', ['settings'=>$settings, 'services' => $services, 'featuredServices'=>$featuredServices]);
     }
 
     public function save(Request $request) {
@@ -22,6 +27,22 @@ class SettingsController extends Controller
         $validator = Validator::make($request->all(),[
             'website_title' => 'required'
         ]);
+
+        parse_str($request->services,$serviceArray);
+
+        
+        if (!empty($serviceArray['service'])) {
+           
+            FeaturedService::truncate();
+           
+            foreach($serviceArray['service'] as $key => $service){
+                $featuredService = new FeaturedService;
+                $featuredService->service_id = $service;
+                $featuredService->sort_order = $key;
+                $featuredService->save();
+            }
+        }
+       
 
         if($validator->passes()) {
             // Save From values here

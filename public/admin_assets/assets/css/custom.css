@@ -26,6 +26,13 @@ html,body{
 .ui-state-default{
     padding: 10px 15px;
     margin-bottom: 5px;
+    position: relative;
+}
+
+.ui-state-default .btn-danger{
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }
 
 .button-keren {

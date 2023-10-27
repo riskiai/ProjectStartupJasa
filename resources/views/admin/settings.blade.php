@@ -28,7 +28,16 @@
         <div class="container-fluid  h-100"">
             <!-- Small boxes (Stat box) -->
             <div class="row">
+
+                
                 <div class="col-md-12">	
+
+                    @if(Session::has('success'))
+                    <div class="alert alert-success">
+                        {{ Session::get('success') }}
+                    </div>
+                    @endif
+
                     <form action="" method="post" name="settingsForm" id="settingsForm">					
                         <div class="card">
 
@@ -39,65 +48,67 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="name">Website Title</label>
-                                    <input type="text" name="website_title" id="website_title" class="form-control" value="{{ $settings->website_title }}">
+                                    <input type="text" name="website_title" id="website_title" class="form-control" value="{{ (!empty($settings->website_title)) ? $settings->website_title : '' }}">
                                     <p class="error website-title-error"></p>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">Email</label>
-                                    <input type="text" value="{{ $settings->email }}" name="email" id="email" class="form-control">
-                                   
+                                    <input type="text" value="{{ (!empty($settings->email)) ? $settings->email : ''  }}" name="email" id="email" class="form-control">
                                 </div>
 
-                                
                                 <div class="form-group">
                                     <label for="name">Phone</label>
-                                    <input type="text" value="{{ $settings->phone}}" name="phone" id="phone" class="form-control">
-                                  
+                                    <input type="text" value="{{ (!empty($settings->phone)) ? $settings->phone : '' }}" name="phone" id="phone" class="form-control">
                                 </div>
-
+{{-- 
+                                <div class="form-group">
+                                    <label for="name">Copyright</label>
+                                    <input type="text" value="{{ (!empty($settings->copy)) ? $settings->copy : '' }}" name="copy" id="copy" class="form-control">
+                                </div> --}}
 
                                 <div class="mt-4">
                                     <h4><strong>Social Links</strong></h4>
                                     <hr>
                                     <div class="form-group">
                                         <label for="name">Facebook Url</label>
-                                        <input type="text" value="{{ $settings->facebook_url}}"  name="facebook_url" id="facebook_url" class="form-control">
+                                        <input type="text" value="{{ (!empty($settings->facebook_url)) ? $settings->facebook_url  : '' }}" name="facebook_url" id="facebook_url" class="form-control">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name">Twitter Url</label>
-                                        <input type="text" value="{{ $settings->twiter_url}}" name="twiter_url" id="twiter_url" class="form-control">
+                                        <input type="text" value="{{ (!empty($settings->twiter_url)) ? $settings->twiter_url : '' }}"  name="twiter_url" id="twiter_url" class="form-control">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name">Instagram Url</label>
-                                        <input type="text" value="{{ $settings->instagram_url}}" name="instagram_url" id="instagram_url" class="form-control">
+                                        <input type="text" value="{{ (!empty($settings->instagram_url)) ? $settings->instagram_url : '' }}"  name="instagram_url" id="instagram_url" class="form-control">
                                     </div>
+                                    
+
                                 </div>
 
                                 <div class="row">
-
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name">Contact Card One</label>
-                                            <textarea name="contact_card_one" id="contact_card_one" class="summernote">{!! $settings->contact_card_one !!}</textarea>
+                                            <textarea name="contact_card_one" id="contact_card_one" class="summernote" >{!! (!empty($settings->contact_card_one)) ? $settings->contact_card_one : '' !!}</textarea>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name">Contact Card Two</label>
-                                            <textarea name="contact_card_two" id="contact_card_two" class="summernote">{!! $settings->contact_card_two !!}</textarea>
+                                            <textarea name="contact_card_two" id="contact_card_two" class="summernote" >{!! (!empty($settings->contact_card_two)) ? $settings->contact_card_two : ''  !!}</textarea>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="name">Contact Card Theree</label>
-                                            <textarea name="contact_card_three" id="contact_card_three" class="summernote">{!! $settings->contact_card_three !!}</textarea>
+                                            <label for="name">Contact Card Three</label>
+                                            <textarea name="contact_card_three" id="contact_card_three" class="summernote" >{!! (!empty($settings->contact_card_three)) ? $settings->contact_card_three : '' !!}</textarea>
                                         </div>
-                                    </div>
+                                    </div> 
 
 
                                     <div class="col-md-6">
@@ -120,9 +131,18 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
+                                        <div class="row mt-2">
                                             <div class="col-md-12" id="services-wrapper">
-                                                
+
+                                                    @if($featuredServices ->isNotEmpty())
+                                                        @foreach ($featuredServices as $service)
+                                                        <div class="ui-state-default" data-id='{{ $service->service_id }}' id='service-{{ $service->service_id }}'>
+                                                            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+                                                            {{ $service->name }}
+                                                            <button type="button" onclick="deleteService({{ $service->service_id  }});" class='btn btn-danger btn-sm'>Delete</button>
+                                                        </div>
+                                                        @endforeach
+                                                    @endif
                                                    {{--  <div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</div>
                                                     <div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</div>
                                                     <div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</div>
@@ -160,6 +180,10 @@
 
     <script type="text/javascript">
 
+        function deleteService(id){
+            $("#service-"+id).remove();
+        }
+
         $( function() {
             $( "#services-wrapper" ).sortable();
         } );
@@ -168,7 +192,7 @@
             var serviceId = $("#service").val()
             var serviceName = $("#service option:selected").text();
 
-            var html = `<div class="ui-state-default" data-id='${serviceId}' id=service-${serviceId}><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>${serviceName}</div>`;
+            var html = `<div class="ui-state-default" data-id='${serviceId}' id=service-${serviceId}><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>${serviceName}  <button type="button" onclick="deleteService( ${serviceId} );" class='btn btn-danger btn-sm'>Delete</button> </div>`;
 
             var isFound = false;
 
@@ -191,13 +215,18 @@
             event.preventDefault();
             $("button[type='submit']").prop('disabled', true);
 
-            
+            var servicesString = $("#services-wrapper").sortable('serialize');
+            // console.log(servicesString);
+            // return false;
+            var  data = $("#settingsForm").serializeArray();
+            data[data.length] = {name: 'services', value : servicesString};
+
 
             $.ajax({
                 url: '{{ route("settings.save") }}',
                 type: 'POST',
                 dataType: 'json',
-                data: $("#settingsForm").serializeArray(),
+                data: data,
                 success: function(response){
                     $("button[type='submit']").prop('disabled', false);
 
