@@ -23,6 +23,11 @@ html,body{
     color: rgb(207, 22, 22);
 }
 
+.ui-state-default{
+    padding: 10px 15px;
+    margin-bottom: 5px;
+}
+
 .button-keren {
     color: white; 
     background-color: rgb(209, 82, 3); 

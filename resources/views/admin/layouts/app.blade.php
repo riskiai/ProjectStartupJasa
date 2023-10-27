@@ -11,8 +11,8 @@
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/fontawesome-free/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/css/adminlte.min.css?v=3.2.0') }}">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/summernote/summernote-bs4.min.css') }}">
-
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/dropzone/dropzone.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/jquery-ui/jquery-ui.min.css') }}">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/css/custom.css') }}">        
     </head>
     <body class="hold-transition sidebar-mini layout-fixed">
@@ -120,6 +120,8 @@
         <script src="{{ asset('admin_assets/assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
         
         <script src="{{ asset('admin_assets/assets/plugins/dropzone/dropzone.js') }}"></script>
+
+        <script src="{{ asset('admin_assets/assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
   
         <script type="text/javascript">
             $(document).ready(function(){

@@ -5,8 +5,9 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\TempImageController;
 use App\Http\Controllers\admin\BlogController as AdminBlogController;
-use App\Http\Controllers\Admin\FaqController as AdminFaqController;
+use App\Http\Controllers\admin\FaqController as AdminFaqController;
 use App\Http\Controllers\admin\PageController;
+use App\Http\Controllers\admin\SettingsController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
@@ -99,7 +100,9 @@ Route::group(['prefix' => 'admin'], function(){
         // Route Delete Image
         Route::post('/page/deleteImage', [PageController::class, 'deleteImage'])->name('page.deleteImage');
         
-
+        // Settrings Route
+        Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
+        Route::post('/settings', [SettingsController::class, 'save'])->name('settings.save');
     });
     
 });
