@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel WEB APP</title>
+    
+    @if (!empty(getSettings()) && getSettings()->website_title != '')
+    <title>{{ getSettings()->website_title }}</title>
+    @else
+    <title>Laravel Web App</title>
+    @endif
+    
+    
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -21,23 +29,28 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <ul class="top-bar-info list-inline-item ps-0 mb-0">
-                            <li class="list-inline-item"><a href="mailto:example@example.com">
+                            <li class="list-inline-item">
+                                @if (!empty(getSettings()) && getSettings()->email != '')
+
+                                <a href="mailto:{{  getSettings()->email }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
       <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
     </svg>
-                                rzkcode@gmail.com</a>
+                                {{  getSettings()->email }}</a>
+                                @endif
                             </li>
                         </ul>
                     </div>
                     <div class="col-lg-6">
                         <div class="text-md-end top-right-bar mt-2 mt-lg-0 call-now">
-                            <a href="tel:+23-345-67890">
+                            @if (!empty(getSettings()) && getSettings()->phone != '')
+                            <a href="tel:{{ getSettings()->phone }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
                                 </svg>
-                                <!-- <span class="support-icon">Call Now : </span> -->
-                                <span class="h5">+628-992-1899</span>
+                                <span class="h5">{{ getSettings()->phone }}</span>
                             </a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -61,11 +74,21 @@
                                 Services
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ url('/services') }}">Web Design</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/services') }}">Logo Design</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/services') }}">T-shirt Design</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/services') }}">Book Cover Design</a></li>
+                                
+                                @if(!empty(getServices()))
+                                @foreach (getServices() as $service)
+                                <li>
+                                    <a class="dropdown-item" href="{{ url("/services/detail/".$service->id) }}">{{ $service->name }}</a>
+                                </li>
+                                @endforeach
+                                @endif
                                 <li><a class="dropdown-item" href="{{ url('/services') }}">View All</a></li>
+
+                                {{-- <li><a class="dropdown-item" href="{{ url('/services') }}">Logo Design</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services') }}">T-shirt Design</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/services') }}">Book Cover Design</a></li> --}}
+
+                               
                             </ul>
                             </li>                        
                         <li class="nav-item"><a class="nav-link" href="{{ url('/faq') }}">FAQ</a></li>
@@ -101,10 +124,16 @@
                         <div class="divider mb-4"></div>
     
                         <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="#!">Logo Design</a></li>
-                            <li><a href="#!">Digital Marketing</a></li>
+                            @if(!empty(getServices()))
+                                @foreach (getServices() as $service)
+                                <li>
+                                    <a href="{{ url("/services/detail/".$service->id) }}">{{ $service->name }}</a>
+                                </li>
+                                @endforeach
+                            @endif
+                            {{-- <li><a href="#!">Digital Marketing</a></li>
                             <li><a href="#!">T-shirt Design</a></li>
-                            <li><a href="#!">Book Cover Design</a></li>                            
+                            <li><a href="#!">Book Cover Design</a></li>                             --}}
                         </ul>
                     </div>
                 </div>
@@ -130,22 +159,41 @@
     
                         <div class="footer-contact-block mb-4">
                             
-                            <h4 class="mt-2"><i class="fa-solid fa-envelope"></i> <a href="mailto:example@example.com">example@example.com</a></h4>
-                            <h4 class="mt-2"><i class="fa-solid fa-phone-square" aria-hidden="true"></i> <a href="tel:+00-000-0000"> +XX-XXX-XXXX</a></h4>
+                            <h4 class="mt-2">                           
+                                @if (!empty(getSettings()) && getSettings()->email != '')
+                                <i class="fa-solid fa-envelope"></i>   
+                                <a href="mailto:{{ getSettings()->email }}">{{ getSettings()->email }}</a>
+                                @endif
+                            </h4>
+                            <h4 class="mt-2">
+                                @if (!empty(getSettings()) && getSettings()->phone != '')
+                                <i class="fa-solid fa-phone-square" aria-hidden="true"></i>
+                                <a href="tel:{{ getSettings()->phone }}">{{ getSettings()->phone }}</a>
+                                @endif
+                            </h4>
                         </div>
     
                         <div class="footer-contact-block">
                             
                             <ul class="list-inline footer-socials mt-4">
+                                @if (!empty(getSettings()) && getSettings()->facebook_url != '')
                                 <li class="list-inline-item">
-                                    <a href="#"><i class="fa-brands fa-facebook-f"></i> </a>
+                                    <a href="{{ getSettings()->facebook_url }}"><i class="fa-brands fa-facebook-f"></i> </a>
                                 </li>
+                                @endif
+
+                                @if (!empty(getSettings()) && getSettings()->twiter_url != '')
                                 <li class="list-inline-item">
-                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="{{ getSettings()->twiter_url }}"><i class="fa-brands fa-twitter"></i></a>
                                 </li>
+                                @endif
+
+                                @if (!empty(getSettings()) && getSettings()->instagram_url != '')
                                 <li class="list-inline-item">
-                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="{{ getSettings()->instagram_url  }}"  target="_blank"><i class="fa-brands fa-instagram" ></i></a>
                                 </li>
+                                @endif
+
                             </ul>
                         </div>
                     </div>
@@ -156,7 +204,9 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-6">
                         <div class="copyright">
-                            Copyright © 2023 RZK CODE
+                            @if (!empty(getSettings()) && getSettings()->copy != '')
+                            {{ getSettings()->copy }}
+                            @endif
                         </div>
                     </div>
                     

@@ -60,3 +60,50 @@ html,body{
     color: rgb(209, 82, 3);
 }
 
+/* CSS untuk garis pemisah */
+.sidebar-divider {
+    border-top: 2px solid #fff; /* Warna garis pemisah putih */
+    margin: 5px 0; /* Jarak antara garis pemisah dan elemen sekitarnya */
+
+}
+
+
+
+/* Dashboard */
+/* styles.css */
+.content-header {
+    background-color: #f8f9fa; /* Warna latar belakang header */
+}
+
+.welcome-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff; /* Warna latar belakang panel selamat datang */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Efek bayangan panel */
+}
+
+.welcome-dashboard {
+    color: #dc3545; /* Warna teks selamat datang */
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.button-merah {
+    background-color: #dc3545; /* Warna tombol merah merahan */
+    color: #fff; /* Warna teks tombol */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.button-merah:hover {
+    background-color: #c82333;
+    font-size: 17px; /* Warna tombol saat dihover */
+    transition: ease;
+}

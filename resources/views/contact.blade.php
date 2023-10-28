@@ -34,10 +34,12 @@
         <!-- Contact info box -->
         <div class="row g-4 g-md-5 mt-0 mt-lg-3">
             <!-- Box item -->
+            @if(!empty($settings) && $settings->contact_card_one != '')
             <div class="col-lg-4 mt-lg-0">
-                <div class="card card-body bg-primary shadow py-5 text-center h-100 border-0">
+                <div class="card card-body bg-primary shadow py-5 text-center h-100 border-0 text-white card-one">
                     <!-- Title -->
-                    <h5 class="text-white mb-3">Customer Support</h5>
+                    {!!  $settings->contact_card_one !!}
+                   {{--  <h5 class="text-white mb-3">Customer Support</h5>
                     <ul class="list-inline mb-0">
                         <!-- Address -->
                         <li class="list-item mb-3">
@@ -51,53 +53,31 @@
                         <li class="list-item mb-0">
                             <a href="#" class="text-white"> <i class="far fa-fw fa-envelope me-2"></i>example@email.com </a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
+            @endif
 
             <!-- Box item -->
+            @if(!empty($settings) && $settings->contact_card_two != '')
             <div class="col-lg-4 mt-lg-0">
                 <div class="card card-body shadow py-5 text-center h-100 border-0">
                     <!-- Title -->
-                    <h5 class="mb-3">Contact Address</h5>
-                    <ul class="list-inline mb-0">
-                        <!-- Address -->
-                        <li class="list-item mb-3 h6 fw-light">
-                            <a href="#"> <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>Example Cop.  Park Street, MI 22222</a>
-                        </li>
-                        <!-- Phone number -->
-                        <li class="list-item mb-3 h6 fw-light">
-                            <a href="#"> <i class="fas fa-fw fa-phone-alt me-2"></i>+XXX-XXX-XXX </a>
-                        </li>
-                        <!-- Email id -->
-                        <li class="list-item mb-0 h6 fw-light">
-                            <a href="#"> <i class="far fa-fw fa-envelope me-2"></i>example@email.com </a>
-                        </li>
-                    </ul>
+                    {!!  $settings->contact_card_two !!}
                 </div>
             </div>
+            @endif
 
             <!-- Box item -->
+            @if(!empty($settings) && $settings->contact_card_three != '')
             <div class="col-lg-4 mt-lg-0">
                 <div class="card card-body shadow py-5 text-center h-100 border-0">
                     <!-- Title -->
-                    <h5 class="mb-3">Main Office Address</h5>
-                    <ul class="list-inline mb-0">
-                        <!-- Address -->
-                        <li class="list-item mb-3 h6 fw-light">
-                            <a href="#"> <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>Example Cop.  Park Street, MI 22222</a>
-                        </li>
-                        <!-- Phone number -->
-                        <li class="list-item mb-3 h6 fw-light">
-                            <a href="#"> <i class="fas fa-fw fa-phone-alt me-2"></i>(XXX) XXX-XXXX </a>
-                        </li>
-                        <!-- Email id -->
-                        <li class="list-item mb-0 h6 fw-light">
-                            <a href="#"> <i class="far fa-fw fa-envelope me-2"></i>example@email.com </a>
-                        </li>
-                    </ul>
+                    {!!  $settings->contact_card_three !!}
                 </div>
             </div>
+            @endif
+
         </div>
     </div>
 </section>

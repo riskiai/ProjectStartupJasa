@@ -48,36 +48,54 @@
                                     <p>Dashboard</p>
                                 </a>
                             </li>
+
+                            <hr class="sidebar-divider col-md-8 nav-item mb-3">
+
                             <li class="nav-item">
                                 <a href="{{ route('serviceList') }}" class="nav-link"> 
                                     <i class="fas fa-rocket nav-icon"></i>
                                     <p>Manage Services</p>
                                 </a>
                             </li>
+
+                            <hr class="sidebar-divider col-md-8 nav-item mb-3">
+
 							<li class="nav-item">
                                 <a href="{{ route('blogList') }}" class="nav-link">
                                     <i class="fas fa-newspaper nav-icon"></i>
                                     <p>Manage Blogs</p>
                                 </a>
                             </li>
+
+                            <hr class="sidebar-divider col-md-8 nav-item mb-3">
+
 							<li class="nav-item">
                                 <a href="{{ route('faqList') }}" class="nav-link">
                                     <i class="far fa-question-circle nav-icon"></i>
                                     <p>Manage Faq</p>
                                 </a>
                             </li>
+
+                            <hr class="sidebar-divider col-md-8 nav-item mb-3">
+
 							<li class="nav-item">
                                 <a href="{{ route('pageList') }}" class="nav-link">
                                     <i class="far fa-file nav-icon"></i>
                                     <p>Manage Pages</p>
                                 </a>
                             </li>
+
+                            <hr class="sidebar-divider col-md-8 nav-item mb-3">
+
 							<li class="nav-item">
                                 <a href="{{ route('settings.index') }}" class="nav-link">
                                     <i class="fas fa-wrench nav-icon"></i>
                                     <p>Settings</p>
                                 </a>
                             </li>  
+
+                            <hr class="sidebar-divider col-md-8 nav-item mb-3">
+                            
                             <li class="nav-item">
                                 <a href="{{ route('admin.logout') }}" class="nav-link">
                                     <i class='fas fa-sign-out-alt nav-icon'></i>

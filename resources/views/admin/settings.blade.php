@@ -59,9 +59,16 @@
 
                                 <div class="form-group">
                                     <label for="name">Phone</label>
-                                    <input type="text" value="{{ (!empty($settings->phone)) ? $settings->phone : '' }}" name="phone" id="phone" class="form-control">
+                                    <input type="text" value="{{ (!empty($settings->copy)) ? $settings->copy : '' }}" name="copy" id="copy" class="form-control">
                                 </div>
-{{-- 
+
+
+                                <div class="form-group">
+                                    <label for="name">Copyright</label>
+                                    <input type="text" value="{{ (!empty($settings->copy)) ? $settings->copy : '' }}" name="copy" id="copy" class="form-control">
+                                </div>
+                                
+                                {{-- 
                                 <div class="form-group">
                                     <label for="name">Copyright</label>
                                     <input type="text" value="{{ (!empty($settings->copy)) ? $settings->copy : '' }}" name="copy" id="copy" class="form-control">
@@ -84,6 +91,8 @@
                                         <label for="name">Instagram Url</label>
                                         <input type="text" value="{{ (!empty($settings->instagram_url)) ? $settings->instagram_url : '' }}"  name="instagram_url" id="instagram_url" class="form-control">
                                     </div>
+
+                                    
                                     
 
                                 </div>

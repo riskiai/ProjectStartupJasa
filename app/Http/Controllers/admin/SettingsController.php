@@ -58,6 +58,7 @@ class SettingsController extends Controller
                 $settings->contact_card_one = $request->contact_card_one;
                 $settings->contact_card_two = $request->contact_card_two;
                 $settings->contact_card_three = $request->contact_card_three;
+                $settings->copy = $request->copy;
                 $settings->save();
             } else {
                 $settings->website_title = $request->website_title; 
@@ -69,6 +70,7 @@ class SettingsController extends Controller
                 $settings->contact_card_one = $request->contact_card_one;
                 $settings->contact_card_two = $request->contact_card_two;
                 $settings->contact_card_three = $request->contact_card_three;
+                $settings->copy = $request->copy;
                 $settings->save();
             }
 
