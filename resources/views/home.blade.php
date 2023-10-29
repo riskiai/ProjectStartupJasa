@@ -81,20 +81,28 @@
 <section class="section-2  py-5">
     <div class="container py-2">
         <div class="row">
+            @if(!empty($welcomes))
+            @foreach ($welcomes as $welcome)
             <div class="col-md-6 align-items-center d-flex">
                 <div class="about-block">
-                    <h1 class="title-color">Welcome</h1>
-                    <div class="mt-2 mb-3 text-muted">Professionals &amp; Creative People</div>
-                    <p>This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</p>
-                    <p>This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</p>
+                    <h1 class="title-color">{{ $welcome->name }}</h1>
+                    <div class="mt-2 mb-3 text-muted">{{ $welcome->short_desc }}</div>
+                    <p>{!! $welcome->description !!}</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="image-red-background">
-                    <img src="{{ asset('assets/images/about-us.jpg') }}" alt="" class="w-100">
+                    {{-- <img src="{{ asset('assets/images/about-us.jpg') }}" alt="" class="w-100"> --}}
+                    @if(!empty($welcome->image))
+                    <img src="{{ asset('uploads/welcomes/thumb/small/'.$welcome->image) }}" class="card-img-top" alt="">
+                   @else
+                   <img src="{{ asset('uploads/placeholder.png') }}" class="card-img-top" alt="">
+                   @endif
                 </div>
                 
             </div>
+            @endforeach
+            @endif
         </div>
     </div>
 </section>
@@ -170,7 +178,7 @@
        <div class="help-container">
             <h1 class="title">Do you need help?</h1>
             <p class="card-text mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-            <a href="#" class="btn btn-primary mt-3">Call Us Now <i class="fa-solid fa-angle-right"></i></a>
+            <a href="{{ url('/contact') }}" class="btn btn-primary mt-3">Call Us Now <i class="fa-solid fa-angle-right"></i></a>
        </div>
     </div>
 </section>

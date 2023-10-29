@@ -5,19 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Page;
 use App\Models\Service;
+use App\Models\Welcome;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index() {
-         // Generate Model Service
-         $services = Service::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
-         $data['services'] = $services;
-
-         $blogs = Blog::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
-         $data1['blogs'] = $blogs;
-
-        return view('home',$data, $data1);
+        $services = Service::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
+        $blogs = Blog::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
+        $welcomes = Welcome::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
+        
+        /* Untuk Menggabungkan Beberapa Data Harus Pakai Array Asosiatif */
+        $data = [
+            'services' => $services,
+            'blogs' => $blogs,
+            'welcomes' => $welcomes,
+        ];
+    
+        return view('home', $data);
     }
 
     public function about() {

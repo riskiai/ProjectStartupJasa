@@ -8,11 +8,13 @@ use App\Http\Controllers\admin\BlogController as AdminBlogController;
 use App\Http\Controllers\admin\FaqController as AdminFaqController;
 use App\Http\Controllers\admin\PageController;
 use App\Http\Controllers\admin\SettingsController;
+use App\Http\Controllers\admin\WelcomeController as AdminWelcomeController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +42,8 @@ Route::get('/services', [ServicesController::class, 'index']);
 Route::get('/services-detail', [ServicesController::class, 'servicesdetail']);
 
 Route::get('/faq', [FaqController::class, 'index']);
+
+Route::get('/welcome', [WelcomeController::class, 'index'])->name('blog.front');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.front');
 Route::get('/blog/{id}', [BlogController::class, 'detail'])->name('blog-detail');   
@@ -73,6 +77,14 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/services/edit/{id}', [ServiceController::class, 'update'])->name('service.edit.update');
         Route::post('/services/delete/{id}', [ServiceController::class, 'delete'])->name('service.delete');
 
+        // Welcome admin Routes
+        Route::get('/welcome', [AdminWelcomeController::class, 'index'])->name('welcomeList');
+        Route::get('/welcome/create', [AdminWelcomeController::class, 'create'])->name('welcome.create.form');
+        Route::post('/welcome/create', [AdminWelcomeController::class, 'save'])->name('welcome.save');
+        Route::get('/welcome/edit/{id}', [AdminWelcomeController::class, 'edit'])->name('welcome.edit');
+        Route::post('/welcome/edit/{id}', [AdminWelcomeController::class, 'update'])->name('welcome.update');
+        Route::post('/welcome/delete/{id}', [AdminWelcomeController::class, 'delete'])->name('welcome.delete');
+
         // Blog admin Routes
         Route::get('/blog/create', [AdminBlogController::class, 'create'])->name('blog.create.form');
         Route::post('/blog/create', [AdminBlogController::class, 'save'])->name('blog.save');
@@ -81,7 +93,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/blog/edit/{id}', [AdminBlogController::class, 'update'])->name('blog.update');
         Route::post('/blog/delete/{id}', [AdminBlogController::class, 'delete'])->name('blog.delete');
 
-        // Faq Routes
+        // Faq Routesz
         Route::get('/faq', [AdminFaqController::class, 'index'])->name('faqList');
         Route::get('/faq/create', [AdminFaqController::class, 'create'])->name('faq.create.form');
         Route::post('/faq/save', [AdminFaqController::class, 'save'])->name('faq.save');

@@ -52,6 +52,15 @@
                             <hr class="sidebar-divider col-md-8 nav-item mb-3">
 
                             <li class="nav-item">
+                                <a href="{{ route('welcomeList') }}" class="nav-link"> 
+                                    <i class="fas fa-home nav-icon"></i>
+                                    <p>Manage Welcome</p>
+                                </a>
+                            </li>
+
+                            <hr class="sidebar-divider col-md-8 nav-item mb-3">
+
+                            <li class="nav-item">
                                 <a href="{{ route('serviceList') }}" class="nav-link"> 
                                     <i class="fas fa-rocket nav-icon"></i>
                                     <p>Manage Services</p>

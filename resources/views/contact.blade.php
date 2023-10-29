@@ -109,9 +109,6 @@
                         </div>
                     </div>
 
-                    
-                    
-
                     <!-- Message -->
                     <div class="mb-4 bg-light-input">
                         <label for="textareaBox" class="form-label">Message *</label>
