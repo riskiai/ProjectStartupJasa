@@ -3,11 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel Web APP | Admin Panel</title>
+        <title>Jasa Design || Login Admin Panel</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/fontawesome-free/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/css/adminlte.min.css?v=3.2.0') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
        
     </head>
     <body class="hold-transition login-page">
@@ -15,7 +17,7 @@
            
             {{-- Image/Gambar --}}
              <div class="login-logo mb-4">
-                <a href="#"><img src="{{ asset('assets/images/logo.png') }}"></a>
+                <a href="#"><img src="{{ asset('assets/images/riski.png') }}" class="img-logo1"></a>
             </div>
 
             @if(Session::has('error'))

@@ -8,7 +8,7 @@
     @if (!empty(getSettings()) && getSettings()->website_title != '')
     <title>{{ getSettings()->website_title }}</title>
     @else
-    <title>Laravel Web App</title>
+    <title>Jasa Design || Home Page</title>
     @endif
     
     
@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
     <meta name="_token" content="{{ csrf_token() }}">
 </head>
 <body>

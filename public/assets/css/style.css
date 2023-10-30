@@ -56,7 +56,7 @@ a{
     border-bottom: 1px solid #eee;
 }
 .navigation .dropdown-item:hover {
-    background: rgba(225, 36, 84, 0.05);
+    background: #7752FE;
     color: #7752FE;
 }
 
@@ -376,13 +376,13 @@ a{
 }
 
 .accordion-button{
-    background: rgb(0, 0, 0);
+    background: #7752FE;
     color:#FFF;
 }
 
 .accordion-button:not(.collapsed){
     color: #FFF;
-    background-color: #000;
+    background-color: #7772FE;
 }
 
 .accordion-item:first-of-type .accordion-button {

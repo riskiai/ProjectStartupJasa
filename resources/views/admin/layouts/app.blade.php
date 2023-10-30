@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="_token" content="{{ csrf_token() }}">
 
-        <title>Laravel Web App| Dashboard</title>
+        <title>Jasa Design || Admin Panel</title>
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/fontawesome-free/css/all.min.css') }}">
@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/summernote/summernote-bs4.min.css') }}">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/dropzone/dropzone.css') }}">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/jquery-ui/jquery-ui.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('admin_assets/assets/css/custom.css') }}">        
+        <link rel="stylesheet" href="{{ asset('admin_assets/assets/css/custom.css') }}">   
+        <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">     
     </head>
     <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
