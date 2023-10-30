@@ -32,7 +32,7 @@
                 <!-- Brand Logo -->
                 <a href="index3.html" class="brand-link bg-white" style="height: 57px;">
 					{{-- <img src="{{ asset('assets/images/logo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
-					 <img src="{{ asset('assets/images/logo.png') }}" alt="" class="w-75 ml-3" style="margin-top:-20px"> 
+					 <img src="{{ asset('assets/images/riski.png') }}" alt="" class="w-75 ml-3" style="margin-top:-5px"> 
                     
                     {{-- <h4>Admin Panel</h4> --}}
                     <!-- <span class="brand-text font-weight-light">AdminLTE 3</span> -->

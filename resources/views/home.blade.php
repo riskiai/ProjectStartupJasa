@@ -85,7 +85,7 @@
             @foreach ($welcomes as $welcome)
             <div class="col-md-6 align-items-center d-flex">
                 <div class="about-block">
-                    <h1 class="title-color">{{ $welcome->name }}</h1>
+                    <h2 style="font-size: 35px" class="title-color">{{ $welcome->name }}</h2>
                     <div class="mt-2 mb-3 text-muted">{{ $welcome->short_desc }}</div>
                     <p>{!! $welcome->description !!}</p>
                 </div>

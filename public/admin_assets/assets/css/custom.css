@@ -86,13 +86,13 @@ html,body{
 }
 
 .welcome-dashboard {
-    color: #dc3545; /* Warna teks selamat datang */
+    color: #7752FE; /* Warna teks selamat datang */
     font-size: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .button-merah {
-    background-color: #dc3545; /* Warna tombol merah merahan */
+    background-color: #7752FE; /* Warna tombol merah merahan */
     color: #fff; /* Warna teks tombol */
     padding: 10px 20px;
     border: none;
@@ -103,7 +103,7 @@ html,body{
 }
 
 .button-merah:hover {
-    background-color: #c82333;
+    background-color: #7752FE;
     font-size: 17px; /* Warna tombol saat dihover */
     transition: ease;
 }

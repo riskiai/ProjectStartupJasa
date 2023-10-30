@@ -25,7 +25,16 @@
 
 <section class="pt-5 pb-0" >
     <div class="container contact-box">
+
         <div class="row">
+            <div class="col-lg-12 text-center mx-auto">
+                @if(Session::has('success'))
+                   <div class="alert alert-success">
+                        {{ Session::get('success') }}
+                   </div>
+                @endif
+            </div>
+
             <div class="col-lg-8 col-xl-6 text-center mx-auto">
                 <h1 class="mb-4 text-black">We're here to help!</h1>
             </div>
@@ -92,19 +101,21 @@
                 <h2 class="mt-4 mt-md-0">Let's talk</h2>
                 <p>To request a quote or want to meet up for coffee, contact us directly or fill out the form and we will get back to you promptly</p>
                     
-                <form>
+                <form action="" method="post" id="contactForm" name="contactForm">
                     <!-- Name -->
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-4 bg-light-input">
-                                <label for="yourName" class="form-label">Your name *</label>
-                                <input type="text" class="form-control form-control-lg" id="yourName">
+                                <label for="name" class="form-label">Your name *</label>
+                                <input type="text" class="form-control form-control-lg" id="name" name="name">
+                                <p class="name-error invalid-feedback"></p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-4 bg-light-input">
-                                <label for="emailInput" class="form-label">Email address *</label>
-                                <input type="email" class="form-control form-control-lg" id="emailInput">
+                                <label for="email" class="form-label">Email address *</label>
+                                <input type="text" class="form-control form-control-lg" id="email" name="email">
+                                <p class="email-error invalid-feedback"></p>
                             </div>
                         </div>
                     </div>
@@ -112,13 +123,15 @@
                     <!-- Message -->
                     <div class="mb-4 bg-light-input">
                         <label for="textareaBox" class="form-label">Message *</label>
-                        <textarea class="form-control" id="textareaBox" rows="4"></textarea>
+                        <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                        <p class="message-error invalid-feedback"></p>
                     </div>
                     <!-- Button -->
                     <div class="d-grid">
-                        <button class="btn btn-lg btn-primary mb-0" type="button">Send Message</button>
+                        <button class="btn btn-lg btn-primary mb-0" id="submit" type="submit">Send Message</button>
                     </div>	
                 </form>
+
             </div>
             <!-- Contact form END -->
         </div>
@@ -135,4 +148,54 @@
     </div>
 </section>
 
+@endsection
+
+
+@section('extraJs')
+    <script type="text/javascript">
+    
+        $("#contactForm").submit(function(event){
+            event.preventDefault();
+            $("#submit").prop('disabled', true);
+
+            $.ajax({
+                url: '{{ route("sendContactEmail") }}',
+                type: 'post',
+                data: $("#contactForm").serializeArray(),
+                dataType: 'json',
+                success: function(response){
+                    $("#submit").prop('disabled', false);
+
+                    if (response.status == 0) {
+                        if (response.errors.name) {
+                            $("#name").addClass('is-invalid');
+                            $(".name-error").html(response.errors.name);
+                        } else {
+                            $(".name-error").html('');
+                            $("#name").removeClass('is-invalid');
+                        }
+
+                        if (response.errors.email) {
+                            $("#email").addClass('is-invalid');
+                            $(".email-error").html(response.errors.email);
+                        } else {
+                            $(".email-error").html('');
+                            $("#email").removeClass('is-invalid');
+                        }
+
+                        if (response.errors.message) {
+                            $("#message").addClass('is-invalid');
+                            $(".message-error").html(response.errors.message);
+                        } else {
+                            $(".message-error").html('');
+                            $("#message").removeClass('is-invalid');
+                        }
+                    }else {
+                        window.location.href = '{{ url("/contact") }}';
+                    }
+                }
+            });
+        });
+    
+    </script>
 @endsection

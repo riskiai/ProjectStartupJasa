@@ -7,7 +7,8 @@ a{
 }
 .top-right-bar a span {
     color: #fff;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 18px;
     letter-spacing: 1px;
     vertical-align: middle;
 }
@@ -21,8 +22,8 @@ a{
 }
 
 .header-top-bar {
-    background: #e12454;
-    font-size: 14px;
+    background: #7752FE;
+    font-size: 15px;
     padding: 10px 0px;
     box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
     color: #fff;
@@ -34,7 +35,7 @@ a{
 }
 
 #navbarmain .nav-link:hover, #navbarmain .active .nav-link {
-    color: #e12454;
+    color: #7752FE;
 }
 
 #navbarmain .nav-link {
@@ -56,7 +57,7 @@ a{
 }
 .navigation .dropdown-item:hover {
     background: rgba(225, 36, 84, 0.05);
-    color: #e12454;
+    color: #7752FE;
 }
 
 .hero .carousel-item{
@@ -86,7 +87,7 @@ a{
 .divider {
     width: 40px;
     height: 5px;
-    background: #e12454;
+    background: #7752FE;
 }
 
 .hero-background-overlay{
@@ -166,7 +167,7 @@ a{
     position: relative;
 }
 .image-red-background::before {
-    border: 1px solid red;
+    border: 1px solid #7752FE;
     content: '';
     width: 100%;
     height: 100%;
@@ -175,7 +176,7 @@ a{
     right: 0;
     -webkit-transform: translateX(3%) translateY(-4%);
     transform: translateX(3%) translateY(-4%);
-    background-color: #e12454;
+    background-color: #7752FE;
     z-index: -1;
 }
 
@@ -194,11 +195,11 @@ a{
 
 .section-3 .cards .card .card-title{
     font-size: 24px;
-    color: #e12454;
+    color: #7752FE;
 }
 
 .section-3 .cards .card .card-title a{
-    color: #e12454;
+    color: #7752FE;
 }
 
 
@@ -208,26 +209,26 @@ a{
 }
 
 .btn-primary{
-    background-color: #e12454;
-    border-color: #e12454;
+    background-color: #7752FE;
+    border-color: #7752FE;
 }
 
 .btn-primary:hover{
-    background-color: rgb(225, 36, 84, 0.8);
-    border-color: #e12454;
+    background-color: #7772FE;
+    border-color: #7752FE;
     box-shadow: none;
 }
 
 .btn-primary:active{
-    background-color: rgb(225, 36, 84, 0.8);
-    border-color: #e12454;
+    background-color: #7772FE;
+    border-color: #7752FE;
     box-shadow: none;
 }
 
 
 .btn-primary:focus{
-    background-color: rgb(225, 36, 84, 0.8);
-    border-color: #e12454;
+    background-color: #7772FE;
+    border-color: #7752FE;
     box-shadow: none;
 }
 
@@ -407,4 +408,8 @@ a{
 
 .card-one ul li a{
     color: #fff;
+}
+
+.img-logo1{
+    width: 200px;
 }

@@ -33,9 +33,9 @@
                                 @if (!empty(getSettings()) && getSettings()->email != '')
 
                                 <a href="mailto:{{  getSettings()->email }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-      <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
-    </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                                 </svg>
                                 {{  getSettings()->email }}</a>
                                 @endif
                             </li>
@@ -57,10 +57,10 @@
             </div>
         </div>
         
-        <nav class="navbar  sticky-top navbar-expand-lg navigation" id="navbar">
+        <nav class="navbar sticky-top navbar-expand-lg navigation" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('assets/images/riski.png') }}" alt="" class="img-logo1 img-fluid">
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icofont-navigation-menu"></span>
@@ -84,11 +84,6 @@
                                 @endforeach
                                 @endif
                                 <li><a class="dropdown-item" href="{{ url('/services') }}">View All</a></li>
-
-                                {{-- <li><a class="dropdown-item" href="{{ url('/services') }}">Logo Design</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/services') }}">T-shirt Design</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/services') }}">Book Cover Design</a></li> --}}
-
                                
                             </ul>
                             </li>                        
@@ -101,6 +96,7 @@
                 </div>
             </div>
         </nav>
+        
     </header>
     
     <main>
@@ -115,7 +111,8 @@
                 <div class="col-lg-3 mr-auto col-sm-6">
                     <div class="widget mb-5 mb-lg-0">
                         <div class="logo mb-4">
-                            <img src="{{ asset('assets/images/logo.png') }}" alt="" class="img-fluid">
+                            <a href="{{ url('/') }}"><img src="{{ asset('assets/images/riski.png') }}" style alt="" class="img-logo1 img-fluid"></a>
+                       
                         </div>                        
                     </div>
                 </div>    
@@ -229,5 +226,16 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 </html>
+
+
+<script>
+
+            $.ajaxSetup({
+                headers:  {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+
+</script>
 
 @yield('extraJs')
