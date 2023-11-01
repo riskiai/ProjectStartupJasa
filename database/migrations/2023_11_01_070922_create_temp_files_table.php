@@ -1,10 +1,10 @@
-<?php
+<?php 
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterUsersTable extends Migration
+class CreateTempFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AlterUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function($table){
-            $table->enum('role',['user','admin'])->default('user')->after('id');
+        Schema::create('temp_files', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 255);
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AlterUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users',function($table){
-            $table->dropColumn('role');
-        });
+        Schema::dropIfExists('temp_files');
     }
 }

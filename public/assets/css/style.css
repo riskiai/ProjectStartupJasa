@@ -16,7 +16,7 @@ a{
 .navigation .dropdown-menu {
     padding: 0px;
     border: 0px;
-    border-top: 5px solid #e12454;
+    border-top: 5px solid #7772FE;
     background: #fff;
     border-radius: 0px;
 }
@@ -56,8 +56,8 @@ a{
     border-bottom: 1px solid #eee;
 }
 .navigation .dropdown-item:hover {
-    background: #7752FE;
-    color: #7752FE;
+    background: #7772FE;
+    color: white;
 }
 
 .hero .carousel-item{
@@ -377,12 +377,12 @@ a{
 
 .accordion-button{
     background: #7752FE;
-    color:#FFF;
+    color:white;
 }
 
 .accordion-button:not(.collapsed){
-    color: #FFF;
-    background-color: #7772FE;
+    color: #7772FE;
+    background-color: #fff;
 }
 
 .accordion-item:first-of-type .accordion-button {
@@ -413,3 +413,47 @@ a{
 .img-logo1{
     width: 200px;
 }
+
+
+/* Tampilan Android */
+/* Hide the burger menu on larger screens */
+@media (min-width: 992px) {
+    .navbar-toggler {
+      display: none;
+    }
+  }
+  
+  /* Customize the appearance of the burger menu icon bars */
+  .navbar-toggler {
+    width: 30px; /* Lebar tombol burger */
+    margin: 5px;
+    background-color: #7752FE;
+    height: 2px;
+    border-radius: 4px; /* Border dengan sudut lengkung */
+    transition: background-color 0.3s; /* Transisi warna latar belakang dan border */
+  }
+
+  /* Hover effect on the burger menu icon */
+  .navbar-toggler:hover {
+    outline: none;
+    border: none; /* Warna garis saat dihover */
+    width: 50px;
+    /* Tampilan kursor pointer saat dihover */
+  }
+
+  
+  /* Center the burger icon vertically */
+  .navbar-toggler-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* Adjust the breakpoint as needed */
+  @media (max-width: 991px) {
+    /* Show the burger menu on smaller screens */
+    .navbar-toggler {
+      display: block;
+    }
+  }
+  
+  

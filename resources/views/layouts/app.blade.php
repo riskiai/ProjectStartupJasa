@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     @if (!empty(getSettings()) && getSettings()->website_title != '')
     <title>{{ getSettings()->website_title }}</title>
     @else
     <title>Jasa Design || Home Page</title>
     @endif
-    
-    
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,11 +61,19 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ asset('assets/images/riski.png') }}" alt="" class="img-logo1 img-fluid">
                 </a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="icofont-navigation-menu"></span>
-                </button>
+
+                <div>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+                    </button>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+                    </button>
+                    
+                </div>
+                  
                 <div class="collapse navbar-collapse" id="navbarmain">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto bar">
                         {{-- nav-item active --}}
                         <li class="nav-item "><a class="nav-link" href="{{ url('/') }}">Home</a></li>
                         <li class="nav-item "><a class="nav-link" href="{{ url('/about-us') }}">About</a></li>
@@ -87,7 +93,7 @@
                                 <li><a class="dropdown-item" href="{{ url('/services') }}">View All</a></li>
                                
                             </ul>
-                            </li>                        
+                        </li>                        
                         <li class="nav-item"><a class="nav-link" href="{{ url('/faq') }}">FAQ</a></li>
                         <li class="nav-item ">
                             <a class="nav-link " href="{{ url('/blog') }}">Blog</a>                            
@@ -97,6 +103,7 @@
                 </div>
             </div>
         </nav>
+        
         
     </header>
     
@@ -224,9 +231,17 @@
 </body>
 <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 </html>
+
+<script>
+    var $ = jQuery.noConflict();
+ </script> 
+
+
+
 
 
 <script>

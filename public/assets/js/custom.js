@@ -39,4 +39,38 @@ $(document).ready(function(){
       });
 });
 
-  
+$(document).ready(function () {
+  // Function to toggle the mobile menu
+  function toggleMobileMenu() {
+    $('#navbarmain').slideToggle();
+  }
+
+  // Toggle the mobile menu when the burger icon is clicked
+  $('.navbar-toggler').on('click', function () {
+    $(this).blur();
+    setTimeout(function() {
+      toggleMobileMenu();
+    }, 100); // Ganti angka 100 dengan jumlah milidetik yang sesuai dengan kebutuhan Anda
+  });
+
+  // Close the mobile menu when a menu item is clicked
+  $('#navbarmain .nav-link').on('click', function () {
+    if ($(window).width() < 992) {
+      // Check if the Services dropdown menu is open, if yes, do not close the menu
+      if (!$(this).hasClass('dropdown-toggle')) {
+        toggleMobileMenu();
+      }
+    }
+  });
+
+  // Handle window resize to show/hide the mobile menu
+  $(window).on('resize', function () {
+    if ($(window).width() >= 992) {
+      $('#navbarmain').show();
+    } else {
+      $('#navbarmain').hide();
+    }
+  });
+});
+
+
