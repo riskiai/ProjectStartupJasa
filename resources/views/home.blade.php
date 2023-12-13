@@ -5,7 +5,8 @@
 <section class="hero">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url('{{ asset('assets/images/banner.jpg') }}') ;">
+           
+            <div class="carousel-item active" style="background-image: url('{{ asset('assets/images/carousel-2.jpg') }}') ;">
                 <div class="hero-background-overlay"></div>
                 <div class="container h-100">
                     <div class="row align-items-center d-flex h-100">
@@ -14,7 +15,7 @@
                                 <div class="divider mb-3"></div>
                                 <span class="text-uppercase text-sm letter-spacing">Bruce Lee
                                 </span>
-                                <h1 class="mb-3 mt-3">If you love life, don’t waste time, for time is what life is made up of</h1>                                        
+                                <h1 class="mb-3 mt-3">Jika Anda mencintai hidup, jangan sia-siakan waktu, karena waktu adalah apa yang membentuk hidup</h1>                                       
                                 <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
                                 <div class="btn-container ">
                                     <a href="appoinment.html" target="_blank" class="btn btn-primary">Contact Now <i class="icofont-simple-right ml-2  "></i></a>
@@ -24,6 +25,7 @@
                     </div>
                 </div>
             </div>    
+
             <div class="carousel-item " style="background-image: url('{{ asset('assets/images/banner1.jpg') }}') ;">
                 <div class="hero-background-overlay"></div>
                 <div class="container h-100">
@@ -32,8 +34,7 @@
                             <div class="block" >
                                 <div class="divider mb-3"></div>
                                 <span class="text-uppercase text-sm letter-spacing">Leo Tolstoy, War and Peace</span>
-                                <h1 class="mb-3 mt-3">The two most powerful warriors are patience and time.</h1>
-                                
+                                <h1 class="mb-3 mt-3">Dua prajurit terkuat adalah kesabaran dan waktu.</h1>
                                 <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
                                 <div class="btn-container ">
                                     <a href="appoinment.html" target="_blank" class="btn btn-primary">Contact Now <i class="icofont-simple-right ml-2  "></i></a>
@@ -44,7 +45,7 @@
                 </div>
             </div>
                             
-            <div class="carousel-item" style="background-image: url('{{ asset('assets/images/banner24.jpg') }}') ;">
+            <div class="carousel-item" style="background-image: url('{{ asset('assets/images/carousel-3.jpg') }}') ;">
                 <div class="hero-background-overlay"></div>
                 <div class="container align-items-center d-flex h-100">
                     <div class="container h-100">
@@ -53,8 +54,7 @@
                                 <div class="block" >
                                     <div class="divider mb-3"></div>
                                     <span class="text-uppercase text-sm letter-spacing">Stephen R. Covey</span>
-                                    <h1 class="mb-3 mt-3">The key is in not spending time, but in investing it.</h1>
-                                    
+                                    <h1 class="mb-2 mt-2 ml-3 mr-3">Kunci nya bukanlah menghabiskan waktu, tetapi menginvestasikannya.</h1>
                                     <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
                                     <div class="btn-container ">
                                         <a href="appoinment.html" target="_blank" class="btn btn-primary">Contact Now <i class="icofont-simple-right ml-2  "></i></a>
@@ -176,9 +176,9 @@
     <div class="hero-background-overlay"></div>
     <div class="container">
        <div class="help-container">
-            <h1 class="title">Do you need help?</h1>
+            <h1 class="title">Apakah Perlu Bantuan ?</h1>
             <p class="card-text mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-            <a href="{{ url('/contact') }}" class="btn btn-primary mt-3">Call Us Now <i class="fa-solid fa-angle-right"></i></a>
+            <a href="{{ url('/contact') }}" class="btn btn-primary mt-3">Hubungi Kami <i class="fa-solid fa-angle-right"></i></a>
        </div>
     </div>
 </section>

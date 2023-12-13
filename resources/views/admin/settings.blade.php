@@ -84,7 +84,7 @@
 
                                     <div class="form-group">
                                         <label for="name">Twitter Url</label>
-                                        <input type="text" value="{{ (!empty($settings->twiter_url)) ? $settings->twiter_url : '' }}"  name="twiter_url" id="twiter_url" class="form-control">
+                                        <input type="text" value="{{ (!empty($settings->twitter_url)) ? $settings->twitter_url : '' }}"  name="twitter_url" id="twitter_url" class="form-control">
                                     </div>
 
                                     <div class="form-group">

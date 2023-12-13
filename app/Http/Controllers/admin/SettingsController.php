@@ -53,7 +53,7 @@ class SettingsController extends Controller
                 $settings->email = $request->email;
                 $settings->phone = $request->phone;                
                 $settings->facebook_url = $request->facebook_url;
-                $settings->twiter_url = $request->twiter_url;
+                $settings->twitter_url = $request->twitter_url;
                 $settings->instagram_url = $request->instagram_url;
                 $settings->contact_card_one = $request->contact_card_one;
                 $settings->contact_card_two = $request->contact_card_two;
@@ -65,7 +65,7 @@ class SettingsController extends Controller
                 $settings->email = $request->email;
                 $settings->phone = $request->phone;                
                 $settings->facebook_url = $request->facebook_url;
-                $settings->twiter_url = $request->twiter_url;
+                $settings->twitter_url = $request->twitter_url;
                 $settings->instagram_url = $request->instagram_url;
                 $settings->contact_card_one = $request->contact_card_one;
                 $settings->contact_card_two = $request->contact_card_two;

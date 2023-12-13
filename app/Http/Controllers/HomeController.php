@@ -30,7 +30,7 @@ class HomeController extends Controller
         $blogs = Blog::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
         $data1['blogs'] = $blogs;
 
-        $page = Page::where('id',14)->first();
+        $page = Page::where('id',1)->first();
         return view('about',['page' => $page] ,$data1);
     }
 
@@ -39,7 +39,7 @@ class HomeController extends Controller
         $blogs = Blog::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
         $data1['blogs'] = $blogs;
 
-        $page = Page::where('id',16)->first();
+        $page = Page::where('id',2)->first();
         return view('static-page',['page' => $page], $data1);
     }
 
@@ -47,7 +47,7 @@ class HomeController extends Controller
         $blogs = Blog::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
         $data1['blogs'] = $blogs;
 
-        $page = Page::where('id',15)->first();
+        $page = Page::where('id',3)->first();
         return view('static-page',['page' => $page], $data1);
     }
 }

@@ -22,7 +22,7 @@
     <meta name="_token" content="{{ csrf_token() }}">
 </head>
 <body>
-    <header>
+    <header class="sticky-header">
         <div class="header-top-bar">
             <div class="container">
                 <div class="row align-items-center">

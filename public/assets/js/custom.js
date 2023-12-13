@@ -1,5 +1,26 @@
 
 $(document).ready(function(){
+
+      // Function to handle header scrolling
+      function handleHeaderScroll() {
+        var scrollPosition = $(window).scrollTop();
+
+        // Add or remove the sticky class based on the scroll position
+        if (scrollPosition > 50) {
+            $('header').addClass('sticky-header');
+        } else {
+            $('header').removeClass('sticky-header');
+        }
+    }
+
+    // Call the function on page load
+    handleHeaderScroll();
+
+    // Call the function on scroll
+    $(window).on('scroll', function () {
+        handleHeaderScroll();
+    });
+
     $('.services-slider').slick({
         dots: false,
         infinite: true,
