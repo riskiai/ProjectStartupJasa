@@ -65,7 +65,7 @@
                         <div class="card-body table-responsive p-0">
                             <table class="table">
                                 <tr>
-                                    <th width="50">ID</th>
+                                    <th width="50">No</th>
                                     <th width="80">Image</th>
                                     <th>Title</th>
                                     <th width="100">Created</th>
@@ -75,7 +75,7 @@
                                 @if (!empty($blogs))
                                     @foreach ($blogs as $blog)     
                                         <tr>
-                                            <td >{{ $blog->id }}</td>
+                                            <td>{{ $loop->iteration + ($blogs->perPage() * ($blogs->currentPage() - 1)) }}</td>
                                             <td>
 
                                                 @if(!empty($blog->image))

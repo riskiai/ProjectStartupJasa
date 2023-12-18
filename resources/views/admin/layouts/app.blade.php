@@ -5,7 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="_token" content="{{ csrf_token() }}">
 
-        <title>Jasa Design || Admin Panel</title>
+        @if (!empty(getSettings()) && getSettings()->website_title != '')
+        <title>{{ getSettings()->website_title }}</title>
+        @else
+        <title>Jasa Design || Home Page</title>
+        @endif
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/fontawesome-free/css/all.min.css') }}">
@@ -55,7 +59,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('welcomeList') }}" class="nav-link"> 
                                     <i class="fas fa-home nav-icon"></i>
-                                    <p>Manage Welcome</p>
+                                    <p>Manage About</p>
                                 </a>
                             </li>
 
@@ -92,6 +96,15 @@
                                 <a href="{{ route('pageList') }}" class="nav-link">
                                     <i class="far fa-file nav-icon"></i>
                                     <p>Manage Pages</p>
+                                </a>
+                            </li>
+
+                            <hr class="sidebar-divider col-md-8 nav-item mb-3">
+
+                            <li class="nav-item">
+                                <a href="{{ route('commentList') }}" class="nav-link">
+                                    <i class="far fa-comments nav-icon"></i>
+                                    <p>Manage Comment</p>
                                 </a>
                             </li>
 
@@ -167,6 +180,7 @@
         </script>
 
         @yield('extraJs')
+        @yield('script')
 
     </body>
 </html>

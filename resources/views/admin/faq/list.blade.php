@@ -65,7 +65,7 @@
                         <div class="card-body table-responsive p-0">
                             <table class="table">
                                 <tr>
-                                    <th width="50">Id</th>
+                                    <th width="50">No</th>
                                     <th width="80">Question</th>
                                     <th width="100">Created</th>
                                     <th width="100">Status</th>
@@ -74,7 +74,7 @@
                                 @if (!empty($faq))
                                     @foreach ($faq as $faqRow)     
                                         <tr>
-                                            <td >{{ $faqRow->id }}</td>
+                                            <td>{{ $loop->iteration + ($faq->perPage() * ($faq->currentPage() - 1)) }}</td>
                                             <td>
                                                 {{ $faqRow->question }}
                                             </td>

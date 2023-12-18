@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Welcome / List</h1>
+                    <h1 class="m-0">About / List</h1>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-6">
@@ -65,7 +65,7 @@
                         <div class="card-body table-responsive p-0">
                             <table class="table">
                                 <tr>
-                                    <th width="50">ID</th>
+                                    <th width="50">No</th>
                                     <th width="80">Image</th>
                                     <th>Title</th>
                                     <th width="100">Created</th>
@@ -75,7 +75,8 @@
                                 @if (!empty($welcomes))
                                     @foreach ($welcomes as $welcome)     
                                         <tr>
-                                            <td >{{ $welcome->id }}</td>
+                                            <td>{{ $loop->iteration + ($welcomes->perPage() * ($welcomes->currentPage() - 1)) }}</td>
+                                            <td>
                                             <td>
 
                                                 @if(!empty($welcome->image))

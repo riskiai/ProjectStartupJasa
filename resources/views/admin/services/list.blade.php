@@ -65,7 +65,7 @@
                         <div class="card-body table-responsive p-0">
                             <table class="table">
                                 <tr>
-                                    <th width="50">ID</th>
+                                    <th width="50">No</th>
                                     <th width="80">Image</th>
                                     <th>Title</th>
                                     <th width="100">Created</th>
@@ -75,7 +75,7 @@
                                 @if (!empty($services))
                                     @foreach ($services as $service)     
                                         <tr>
-                                            <td >{{ $service->id }}</td>
+                                            <td>{{ $loop->iteration + ($services->perPage() * ($services->currentPage() - 1)) }}</td>
                                             <td>
 
                                                 @if(!empty($service->image))

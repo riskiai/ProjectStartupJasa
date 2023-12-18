@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\TempImageController;
 use App\Http\Controllers\admin\BlogController as AdminBlogController;
+use App\Http\Controllers\admin\CommentController;
 use App\Http\Controllers\admin\FaqController as AdminFaqController;
 use App\Http\Controllers\admin\PageController;
 use App\Http\Controllers\admin\SettingsController;
@@ -110,6 +111,13 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/page/edit/{id}', [PageController::class, 'edit'])->name('page.edit');
         Route::post('/page/edit/{id}', [PageController::class, 'update'])->name('page.update');
         Route::post('/page/delete/{id}', [PageController::class, 'delete'])->name('page.delete');
+
+        // Comment Pages
+        Route::get('/comment', [CommentController::class, 'index'])->name('commentList');
+        Route::get('/comment/edit/{id}', [CommentController::class, 'edit'])->name('comment.edit');
+        Route::post('/comment/update/{id}', [CommentController::class, 'update'])->name('comment.update');
+        Route::post('/comment/delete/{id}', [CommentController::class, 'delete'])->name('comment.delete');
+
         
         // Route Delete Image
         Route::post('/page/deleteImage', [PageController::class, 'deleteImage'])->name('page.deleteImage');

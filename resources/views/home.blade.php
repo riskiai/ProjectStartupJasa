@@ -6,7 +6,7 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
            
-            <div class="carousel-item active" style="background-image: url('{{ asset('assets/images/carousel-2.jpg') }}') ;">
+            {{-- <div class="carousel-item active" style="background-image: url('{{ asset('assets/images/carousel-2.jpg') }}') ;">
                 <div class="hero-background-overlay"></div>
                 <div class="container h-100">
                     <div class="row align-items-center d-flex h-100">
@@ -16,7 +16,7 @@
                                 <span class="text-uppercase text-sm letter-spacing">Bruce Lee
                                 </span>
                                 <h1 class="mb-3 mt-3">Jika Anda mencintai hidup, jangan sia-siakan waktu, karena waktu adalah apa yang membentuk hidup</h1>                                       
-                                {{-- <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p> --}}
+                                <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
                                 <div class="btn-container ">
                                     <a href="appoinment.html" target="_blank" class="btn btn-primary">Hubungi Kami <i class="icofont-simple-right ml-2  "></i></a>
                                 </div>
@@ -24,18 +24,18 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>     --}}
 
-            <div class="carousel-item " style="background-image: url('{{ asset('assets/images/banner1.jpg') }}') ;">
+            <div class="carousel-item active" style="background-image: url('{{ asset('assets/images/banner1.jpg') }}') ;">
                 <div class="hero-background-overlay"></div>
                 <div class="container h-100">
                     <div class="row align-items-center d-flex h-100">
-                        <div class="col-md-7">
+                        <div class="col-md-7"  style="margin-left: 2rem;">
                             <div class="block" >
                                 <div class="divider mb-3"></div>
-                                <span class="text-uppercase text-sm letter-spacing">Leo Tolstoy, War and Peace</span>
-                                <h1 class="mb-3 mt-3">Dua prajurit terkuat adalah kesabaran dan waktu.</h1>
-                                <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
+                                <span class="text-uppercase text-sm letter-spacing">Riski AI</span>
+                                <h1 class="mb-3 mt-3">Desain Berkualitas, Menciptakan Kesan yang Tidak Terlupakan.</h1>
+                                {{-- <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p> --}}
                                 <div class="btn-container ">
                                     <a href="appoinment.html" target="_blank" class="btn btn-primary">Hubungi Kami <i class="icofont-simple-right ml-2  "></i></a>
                                 </div>
@@ -50,12 +50,12 @@
                 <div class="container align-items-center d-flex h-100">
                     <div class="container h-100">
                         <div class="row align-items-center d-flex h-100">
-                            <div  class="col-md-7">
+                            <div  class="col-md-7" style="margin-left: 2rem;">
                                 <div class="block" >
                                     <div class="divider mb-3"></div>
-                                    <span class="text-uppercase text-sm letter-spacing">Stephen R. Covey</span>
-                                    <h1 class="mb-2 mt-2 ml-3 mr-3">Kunci nya bukanlah menghabiskan waktu, tetapi menginvestasikannya.</h1>
-                                    <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
+                                    <span class="text-uppercase text-sm letter-spacing">Jordan Bastian</span>
+                                    <h1 class="mb-2 mt-2 ml-3 mr-3">Desain yang Unik untuk Merevolusi Bisnis Anda.</h1>
+                                    {{-- <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p> --}}
                                     <div class="btn-container ">
                                         <a href="appoinment.html" target="_blank" class="btn btn-primary">Hubungi Kami <i class="icofont-simple-right ml-2  "></i></a>
                                     </div>
