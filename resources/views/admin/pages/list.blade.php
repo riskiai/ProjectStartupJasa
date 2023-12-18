@@ -90,7 +90,7 @@
                                                 @if($page->status  == 1)
                                                     <span class="badge bg-success">Active</span>
                                                 @else
-                                                    <span class="badge bg-success">Block</span>
+                                                     <span class="badge bg-danger">Not Active</span>
                                                 @endif
                                             </td>
                                             <td>

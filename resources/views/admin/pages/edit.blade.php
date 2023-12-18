@@ -77,7 +77,7 @@
                                     </label>
                                     <select name="status" id="status" class="form-control">
                                         <option value="1" {{ ($page->status == 1) ? 'selected' : '' }} >Active</option>
-                                        <option value="0" {{ ($page->status == 0) ? 'selected' : '' }}>Block</option>
+                                        <option value="0" {{ ($page->status == 0) ? 'selected' : '' }}>Not Active</option>
                                     </select>
                                 </div>
 
