@@ -16,9 +16,9 @@
                                 <span class="text-uppercase text-sm letter-spacing">Bruce Lee
                                 </span>
                                 <h1 class="mb-3 mt-3">Jika Anda mencintai hidup, jangan sia-siakan waktu, karena waktu adalah apa yang membentuk hidup</h1>                                       
-                                <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
+                                {{-- <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p> --}}
                                 <div class="btn-container ">
-                                    <a href="appoinment.html" target="_blank" class="btn btn-primary">Contact Now <i class="icofont-simple-right ml-2  "></i></a>
+                                    <a href="appoinment.html" target="_blank" class="btn btn-primary">Hubungi Kami <i class="icofont-simple-right ml-2  "></i></a>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 <h1 class="mb-3 mt-3">Dua prajurit terkuat adalah kesabaran dan waktu.</h1>
                                 <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
                                 <div class="btn-container ">
-                                    <a href="appoinment.html" target="_blank" class="btn btn-primary">Contact Now <i class="icofont-simple-right ml-2  "></i></a>
+                                    <a href="appoinment.html" target="_blank" class="btn btn-primary">Hubungi Kami <i class="icofont-simple-right ml-2  "></i></a>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                                     <h1 class="mb-2 mt-2 ml-3 mr-3">Kunci nya bukanlah menghabiskan waktu, tetapi menginvestasikannya.</h1>
                                     <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
                                     <div class="btn-container ">
-                                        <a href="appoinment.html" target="_blank" class="btn btn-primary">Contact Now <i class="icofont-simple-right ml-2  "></i></a>
+                                        <a href="appoinment.html" target="_blank" class="btn btn-primary">Hubungi Kami <i class="icofont-simple-right ml-2  "></i></a>
                                     </div>
                                 </div>
                             </div>

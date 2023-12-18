@@ -17,7 +17,7 @@
            
             {{-- Image/Gambar --}}
              <div class="login-logo mb-4">
-                <a href="#"><img src="{{ asset('assets/images/riski.png') }}" class="img-logo1"></a>
+                <a href="#"><img src="{{ asset('assets/images/LogoCahaya.png') }}" class="img-logo1"></a>
             </div>
 
             @if(Session::has('error'))
