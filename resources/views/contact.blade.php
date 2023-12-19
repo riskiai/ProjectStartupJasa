@@ -12,7 +12,7 @@
                         <div class="col-md-12">
                             <div class="block text-center">
                                 <span class="text-uppercase text-sm letter-spacing"></span>
-                                <h1 class="mb-3 mt-3 text-center">Contact us</h1>        
+                                <h1 class="mb-3 mt-3 text-center">Kontak Kami</h1>        
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>                                                                        
                             </div>
                         </div>
@@ -36,7 +36,7 @@
             </div>
 
             <div class="col-lg-8 col-xl-6 text-center mx-auto">
-                <h1 class="mb-4 text-black">We're here to help!</h1>
+                <h1 class="mb-4 text-black">Kami di sini untuk membantu!</h1>
             </div>
         </div>
 
@@ -98,7 +98,7 @@
             <!-- Contact form START -->
             <div class="col-md-12">
                 <!-- Title -->
-                <h2 class="mt-4 mt-md-0">Let's talk</h2>
+                <h2 class="mt-4 mt-md-0">Mari Kita Bicara</h2>
                 <p>To request a quote or want to meet up for coffee, contact us directly or fill out the form and we will get back to you promptly</p>
                     
                 <form action="" method="post" id="contactForm" name="contactForm">

@@ -25,38 +25,31 @@
 <section class="section-3 py-5">
     <div class="container">
         <div class="divider mb-3"></div>
-        <h2 class="title-color mb-4 h1">Services</h2>
+        <h2 class="title-color mb-4 h1">Jasa</h2>
         <div class="cards">
-           <div class="row">     
-
+            <div class="services-slider">
+                
                 @if(!empty($services))
                 @foreach ($services as $service)
-                    
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0">
-                       
-                       @if(!empty($service->image))
+                <div class="card border-0 ">
+
+                    @if(!empty($service->image))
                         <img src="{{ asset('uploads/services/thumb/small/'.$service->image) }}" class="card-img-top" alt="">
                        @else
                        <img src="{{ asset('uploads/placeholder.png') }}" class="card-img-top" alt="">
-                        @endif
-                       
-                        <div class="card-body p-3">
-                            <h1 class="card-title mt-2"><a href="{{ url('/services/detail/'.$service->id) }}">{{  $service->name }}</a></h1>
-                            <div class="content pt-2">
-                                <p class="card-text">{{  $service->short_desc }}</p>
-                            </div>
-                            <a href="{{ url('/services/detail/'.$service->id) }}" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
+                       @endif
+
+                    <div class="card-body p-3">
+                        <h1 class="card-title mt-2"><a href="{{ url('/services/detail/'.$service->id) }}">{{ $service->name }}</a></h1>
+                        <div class="content pt-2">
+                            <p class="card-text">{{ $service->short_desc }}</p>
                         </div>
-                    </div> 
-                </div> 
+                        <a href="{{ url('/services/detail/'.$service->id) }}" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
+                </div>
                 @endforeach
-                @endif;
-
-
-
-
-           </div>
+                @endif
+            </div>
         </div>                
     </div>
 </section>
@@ -65,9 +58,9 @@
     <div class="hero-background-overlay"></div>
     <div class="container">
        <div class="help-container">
-            <h1 class="title">Do you need help?</h1>
+            <h1 class="title">Apakah Perlu Bantuan ?</h1>
             <p class="card-text mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-            <a href="#" class="btn btn-primary mt-3">Call Us Now <i class="fa-solid fa-angle-right"></i></a>
+            <a href="#" class="btn btn-primary mt-3">Hubungi Kami <i class="fa-solid fa-angle-right"></i></a>
        </div>
     </div>
 </section>
@@ -75,7 +68,7 @@
 <section class="section-3 py-5">
     <div class="container">
         <div class="divider mb-3"></div>
-        <h2 class="title-color mb-4 h1">Blog & News</h2>
+        <h2 class="title-color mb-4 h1">Artikel</h2>
         <div class="cards">
             <div class="services-slider">
                 <div class="card border-0 ">

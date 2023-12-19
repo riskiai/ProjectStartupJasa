@@ -11,7 +11,7 @@
             </div>    
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="widget mb-5 mb-lg-0">
-                    <h4 class="text-capitalize mb-3">Services</h4>
+                    <h4 class="text-capitalize mb-3">Jasa</h4>
                     <div class="divider mb-4"></div>
 
                     <ul class="list-unstyled footer-menu lh-35">
@@ -37,15 +37,15 @@
                     <ul class="list-unstyled footer-menu lh-35">
                         <li><a href="{{ route('terms') }}">Terms &amp; Conditions</a></li>
                         <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
-                        <li><a href="{{ route('about') }}">About Us</a></li>                            
-                        <li><a href="{{ route('blog.front') }}">Blog</a></li>                            
+                        <li><a href="{{ route('about') }}">Tentang Kami</a></li>                            
+                        <li><a href="{{ route('blog.front') }}">Artikel</a></li>                            
                     </ul>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="widget widget-contact mb-5 mb-lg-0">
-                    <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                    <h4 class="text-capitalize mb-3">Hubungi Kami</h4>
                     <div class="divider mb-4"></div>
 
                     <div class="footer-contact-block mb-4">

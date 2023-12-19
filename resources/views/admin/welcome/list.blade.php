@@ -67,7 +67,7 @@
                                 <tr>
                                     <th width="50">No</th>
                                     <th width="80">Image</th>
-                                    <th>Title</th>
+                                    <th with="80">Title</th>
                                     <th width="100">Created</th>
                                     <th width="100">Status</th>
                                     <th width="100">Action</th>
@@ -76,7 +76,7 @@
                                     @foreach ($welcomes as $welcome)     
                                         <tr>
                                             <td>{{ $loop->iteration + ($welcomes->perPage() * ($welcomes->currentPage() - 1)) }}</td>
-                                            <td>
+                                            
                                             <td>
 
                                                 @if(!empty($welcome->image))

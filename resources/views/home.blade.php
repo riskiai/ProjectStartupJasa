@@ -110,7 +110,7 @@
 <section class="section-3 py-5">
     <div class="container">
         <div class="divider mb-3"></div>
-        <h2 class="title-color mb-4 h1">Services</h2>
+        <h2 class="title-color mb-4 h1">Jasa</h2>
         <div class="cards">
             <div class="services-slider">
                 
@@ -187,7 +187,7 @@
 <section class="section-3 py-5">
     <div class="container">
         <div class="divider mb-3"></div>
-        <h2 class="title-color mb-4 h1">Blog & News</h2>
+        <h2 class="title-color mb-4 h1">Artikel</h2>
         <div class="cards">
             <div class="services-slider">
                 
