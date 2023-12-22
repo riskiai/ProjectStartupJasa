@@ -11,10 +11,11 @@ class ServicesController extends Controller
     public function index(){
         // Generate Model Service
         $services = Service::where('status', 1)->orderBy('created_at', 'DESC')->get();
+        $blogs = Blog::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
         $data['services'] = $services;
         
 
-        return view('services', $data);
+        return view('services', compact('services', 'blogs'));
     }
 
     public function servicesdetail() {

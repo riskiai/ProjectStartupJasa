@@ -37,7 +37,7 @@
                                 <h1 class="mb-3 mt-3">Desain Berkualitas, Menciptakan Kesan yang Tidak Terlupakan.</h1>
                                 {{-- <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p> --}}
                                 <div class="btn-container ">
-                                    <a href="appoinment.html" target="_blank" class="btn btn-primary">Hubungi Kami <i class="icofont-simple-right ml-2  "></i></a>
+                                    <a href="{{ route('contact') }}" target="_blank" class="btn btn-primary">Hubungi Kami <i class="icofont-simple-right ml-2  "></i></a>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                                     <h1 class="mb-2 mt-2 ml-3 mr-3">Desain yang Unik untuk Merevolusi Bisnis Anda.</h1>
                                     {{-- <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p> --}}
                                     <div class="btn-container ">
-                                        <a href="appoinment.html" target="_blank" class="btn btn-primary">Hubungi Kami <i class="icofont-simple-right ml-2  "></i></a>
+                                        <a href="{{ route('contact') }}" target="_blank" class="btn btn-primary">Hubungi Kami <i class="icofont-simple-right ml-2  "></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -177,8 +177,8 @@
     <div class="container">
        <div class="help-container">
             <h1 class="title">Apakah Perlu Bantuan ?</h1>
-            <p class="card-text mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-            <a href="{{ url('/contact') }}" class="btn btn-primary mt-3">Hubungi Kami <i class="fa-solid fa-angle-right"></i></a>
+            <p class="card-text mt-3">Temukan solusi desain yang kreatif dan menginspirasi di PT Cahaya Kreatif. Kami siap membantu mewujudkan ide-ide Anda menjadi kenyataan. Jelajahi penawaran promosi kami dan berikan sentuhan unik pada proyek Anda.</p>
+            <a href="{{ route('contact') }}" class="btn btn-primary mt-3">Hubungi Kami <i class="fa-solid fa-angle-right"></i></a>
        </div>
     </div>
 </section>

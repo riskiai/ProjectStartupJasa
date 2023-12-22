@@ -12,8 +12,7 @@
                         <div class="col-md-12">
                             <div class="block text-center">
                                 <span class="text-uppercase text-sm letter-spacing"></span>
-                                <h1 class="mb-3 mt-3 text-center">Kontak Kami</h1>        
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>                                                                        
+                                <h1 class="mb-3 mt-3 text-center">Kontak Kami</h1>                                                                        
                             </div>
                         </div>
                     </div>
@@ -99,36 +98,44 @@
             <div class="col-md-12">
                 <!-- Title -->
                 <h2 class="mt-4 mt-md-0">Mari Kita Bicara</h2>
-                <p>To request a quote or want to meet up for coffee, contact us directly or fill out the form and we will get back to you promptly</p>
+                <p>Silakan mengisi formulir di bawah ini, dan kami akan segera menghubungi Anda</p>
                     
                 <form action="" method="post" id="contactForm" name="contactForm">
                     <!-- Name -->
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-4 bg-light-input">
-                                <label for="name" class="form-label">Your name *</label>
+                                <label for="name" class="form-label">Nama Anda *</label>
                                 <input type="text" class="form-control form-control-lg" id="name" name="name">
                                 <p class="name-error invalid-feedback"></p>
                             </div>
                         </div>
+
                         <div class="col-md-6">
                             <div class="mb-4 bg-light-input">
-                                <label for="email" class="form-label">Email address *</label>
+                                <label for="email" class="form-label">Email Anda *</label>
                                 <input type="text" class="form-control form-control-lg" id="email" name="email">
                                 <p class="email-error invalid-feedback"></p>
                             </div>
                         </div>
+
+                    </div>
+
+                    <div class="mb-4 bg-light-input">
+                        <label for="textareaBox" class="form-label">NO HP Anda *</label>
+                        <input type="number" class="form-control form-control-lg" id="phone" name="phone">
+                        <p class="phone-error invalid-feedback"></p>
                     </div>
 
                     <!-- Message -->
                     <div class="mb-4 bg-light-input">
-                        <label for="textareaBox" class="form-label">Message *</label>
+                        <label for="textareaBox" class="form-label">Pesan Anda *</label>
                         <textarea class="form-control" id="message" name="message" rows="4"></textarea>
                         <p class="message-error invalid-feedback"></p>
                     </div>
                     <!-- Button -->
                     <div class="d-grid">
-                        <button class="btn btn-lg btn-primary mb-0" id="submit" type="submit">Send Message</button>
+                        <button class="btn btn-lg btn-primary mb-0" id="submit" type="submit">Kirim Pesan</button>
                     </div>	
                 </form>
 
@@ -181,6 +188,14 @@
                         } else {
                             $(".email-error").html('');
                             $("#email").removeClass('is-invalid');
+                        }
+
+                        if (response.errors.phone) {
+                            $("#phone").addClass('is-invalid');
+                            $(".phone-error").html(response.errors.phone);
+                        } else {
+                            $(".phone-error").html('');
+                            $("#phone").removeClass('is-invalid');
                         }
 
                         if (response.errors.message) {

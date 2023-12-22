@@ -13,7 +13,7 @@
                             <div class="block text-center">
                                 <span class="text-uppercase text-sm letter-spacing"></span>
                                 <h1 class="mb-3 mt-3 text-center">Artikel</h1>        
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>                                                                        
+                                {{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>                                                                         --}}
                             </div>
                         </div>
                     </div>

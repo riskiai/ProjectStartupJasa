@@ -51,7 +51,7 @@ Route::get('/blog/{id}', [BlogController::class, 'detail'])->name('blog-detail')
 
 Route::post('/save-comment', [BlogController::class, 'saveComment'])->name('save.blog'); 
 
-Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('sendContactEmail');
 
 

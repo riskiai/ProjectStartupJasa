@@ -19,6 +19,7 @@ class ContactController extends Controller
         $validator = Validator::make($request->all(),[
             'name' => 'required',
             'email' => 'required|email',
+            'phone' => 'required',
             'message' => 'required'
         ]);
 
@@ -26,11 +27,12 @@ class ContactController extends Controller
         if($validator->passes()) {
             $emailData['name'] = $request->name;
             $emailData['email'] = $request->email;
+            $emailData['phone'] = $request->phone;
             $emailData['message'] = $request->message;
 
             Mail::to('riskiahmadiilham@gmail.com')->send(new ContactMail($emailData));
 
-            $request->session()->flash('success', 'Thanks for contacting us, we will contact you shortly.');
+            $request->session()->flash('success', 'Terima kasih telah menghubungi kami, kami akan segera menghubungi Anda.');
 
             return response()->json([
                 'status' => 200,

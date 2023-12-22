@@ -51,8 +51,8 @@
     <div class="container">
        <div class="help-container">
             <h1 class="title">Apakah Perlu Bantuan ?</h1>
-            <p class="card-text mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?</p>
-            <a href="#" class="btn btn-primary mt-3">Hubungi Kami <i class="fa-solid fa-angle-right"></i></a>
+            <p class="card-text mt-3">Temukan solusi desain yang kreatif dan menginspirasi di PT Cahaya Kreatif. Kami siap membantu mewujudkan ide-ide Anda menjadi kenyataan. Jelajahi penawaran promosi kami dan berikan sentuhan unik pada proyek Anda.</p>
+            <a href="{{ route('contact') }}" class="btn btn-primary mt-3">Hubungi Kami <i class="fa-solid fa-angle-right"></i></a>
        </div>
     </div>
 </section>
