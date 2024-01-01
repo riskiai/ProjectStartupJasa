@@ -121,7 +121,7 @@
 
 
                                     <div class="col-md-6">
-                                        <label for="">Featured Services</label>
+                                        <label for="">Produk Unggulan Jasa Design</label>
                                         <div class="row">
                                             <div class="col">
                                                 <select name="service" id="service" class="form-control">

@@ -30,10 +30,10 @@
                 <div class="inner">
                   <h3>{{  $commentCount }}</h3>
   
-                  <p>Data Comments</p>
+                  <p>Data Comment</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-bag"></i>
+                  <i class="ion far fa-comments"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -49,7 +49,7 @@
                   <p>Data Faq</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
+                  <i class="ion far fa-question-circle"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -62,10 +62,10 @@
                 <div class="inner">
                   <h3>{{ $blogCount  }}</h3>
   
-                  <p>Data Blogs</p>
+                  <p>Data Artikel</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-person-add"></i>
+                  <i class="ion fas fa-newspaper"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -77,10 +77,10 @@
                 <div class="inner">
                   <h3>{{  $serviceCount  }}</h3>
   
-                  <p>Data Service</p>
+                  <p>Data Jasa</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
+                  <i class="ion fas fa-rocket"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>

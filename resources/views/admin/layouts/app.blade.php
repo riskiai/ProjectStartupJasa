@@ -12,6 +12,7 @@
         @endif
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/fontawesome-free/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/css/adminlte.min.css?v=3.2.0') }}">
         <link rel="stylesheet" href="{{ asset('admin_assets/assets/plugins/summernote/summernote-bs4.min.css') }}">
@@ -59,7 +60,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('welcomeList') }}" class="nav-link"> 
                                     <i class="fas fa-home nav-icon"></i>
-                                    <p>Manage About</p>
+                                    <p>Manage Tentang</p>
                                 </a>
                             </li>
 
@@ -68,7 +69,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('serviceList') }}" class="nav-link"> 
                                     <i class="fas fa-rocket nav-icon"></i>
-                                    <p>Manage Services</p>
+                                    <p>Manage Jasa</p>
                                 </a>
                             </li>
 
@@ -77,7 +78,7 @@
 							<li class="nav-item">
                                 <a href="{{ route('blogList') }}" class="nav-link">
                                     <i class="fas fa-newspaper nav-icon"></i>
-                                    <p>Manage Blogs</p>
+                                    <p>Manage Artikel</p>
                                 </a>
                             </li>
 

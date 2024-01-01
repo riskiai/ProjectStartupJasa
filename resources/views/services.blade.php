@@ -11,7 +11,7 @@
                         <div class="col-md-12">
                             <div class="block text-center">
                                 <span class="text-uppercase text-sm letter-spacing"></span>
-                                <h1 class="mb-3 mt-3 text-center">Services</h1>        
+                                <h1 class="mb-3 mt-3 text-center">Jasa Design</h1>        
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>                                                                        
                             </div>
                         </div>
@@ -25,7 +25,7 @@
 <section class="section-3 py-5">
     <div class="container">
         <div class="divider mb-3"></div>
-        <h2 class="title-color mb-4 h1">Jasa</h2>
+        <h2 class="title-color mb-4 h1">Jasa Design</h2>
         <div class="cards">
             <div class="services-slider">
                 
